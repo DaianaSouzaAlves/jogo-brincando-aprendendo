@@ -65,23 +65,13 @@
             </div>
         </div>
 
-        <!-- PARTE 3: escolha do nível -->
-        <div class="col-12 parte parte-3" style="display: none;">
-            <div class="niveis d-flex justify-content-center align-items-center h-100">
-                <a href="javascript:void(0);" class="nivel" data-nivel="facil">
-                    <img src="assets/img/nivel/facil.png" alt="Fácil">
-                </a>
-                <a href="javascript:void(0);" class="nivel" data-nivel="medio">
-                    <img src="assets/img/nivel/medio.png" alt="Médio">
-                </a>
-                <a href="javascript:void(0);" class="nivel" data-nivel="dificil">
-                    <img src="assets/img/nivel/dificil.png" alt="Difícil">
-                </a>
-            </div>
-        </div>
-
         <!-- PARTE 4: perguntas -->
         <div class="col-12 parte parte-4" style="display: none;">
+            <!-- PNG do nível no centro, com o fundo escurecido; some sozinho e deixa a 1ª pergunta -->
+            <div class="intro-nivel" style="display: none;">
+                <img src="" alt="Nível">
+            </div>
+
             <div class="row h-100">
                 <div class="col-12 col-lg-9 d-flex flex-column h-100">
                     <div class="card d-flex flex-column flex-grow-1 my-auto px-5 justify-content-around">
@@ -103,29 +93,21 @@
 
         <!-- PARTE 5: resultado -->
         <div class="col-12 parte parte-5" style="display: none;">
-            <div class="d-flex flex-column flex-grow-1 my-auto px-5 justify-content-around">
-                <div class="row">
-                    <div class="col-12 mb-4 my-3 titulo-resultado">
-                    </div>
-                </div>
+            <div class="d-flex flex-column h-100 px-5 justify-content-center">
                 <div class="col-12 d-flex justify-content-center">
-                    <div class="card card-imagem">
-                        <div class="row">
-                            <div class="col-12">
-                                <img src="assets/img/resultado_bom.png" class="w-100 imagem-resultado" alt="">
-                            </div>
-                            <div class="col-12 text-center">
-                                <h4 class="text-muted">
-                                    ACERTOS: <span class="qtdAcertos"></span>/<span class="qtdTotal"></span>
-                                </h4>
-                            </div>
-                        </div>
+                    <div class="card card-imagem estrelas">
+                        <img src="assets/img/nivel/estrela.png" alt="" class="estrela">
+                        <img src="assets/img/nivel/estrela.png" alt="" class="estrela">
+                        <img src="assets/img/nivel/estrela.png" alt="" class="estrela">
                     </div>
                 </div>
-                <div class="col-12 mt-4 d-flex justify-content-center">
-                    <button class="btn btn-success">
+                <div class="col-12 mt-4 d-flex justify-content-center align-items-center gap-4">
+                    <button class="btn btn-success botao-repetir">
                         JOGAR NOVAMENTE
                     </button>
+                    <a href="javascript:void(0);" class="botao-proximo" style="display: none;" aria-label="Próximo nível">
+                        <img src="assets/img/nivel/proximoNivel.png" alt="Próximo nível">
+                    </a>
                 </div>
             </div>
         </div>
@@ -145,7 +127,6 @@
 <script src="assets/js/utils.js"></script>
 <script src="assets/js/parte1.js"></script>
 <script src="assets/js/parte2.js"></script>
-<script src="assets/js/parte3.js"></script>
 <script src="assets/js/parte4.js"></script>
 <script src="assets/js/ligacao.js"></script>
 <script src="assets/js/parte5.js"></script>

@@ -70,7 +70,10 @@ function resolverImagem(item) {
 
 /* ---------------------------- Fluxo do jogo ---------------------------- */
 
-/** Chamada pela tela de nível: sorteia a ordem das perguntas e começa. */
+const NIVEIS = ['facil', 'medio', 'dificil'];
+const TEMPO_INTRO_NIVEL = 2000; // ms que o PNG do nível fica na tela
+
+/** Sorteia a ordem das perguntas, mostra o PNG do nível por um instante e começa. */
 function iniciarNivel(nivel) {
     nivelAtual = nivel;
     questoesAcertadas = 0;
@@ -79,6 +82,11 @@ function iniciarNivel(nivel) {
     );
     trocaParte(4);
     montarPergunta(0);
+
+    const $intro = $('.parte-4 .intro-nivel');
+    $intro.find('img').attr('src', `assets/img/nivel/nivel_${nivel}.png`);
+    $intro.stop(true, true).fadeIn(200);
+    setTimeout(() => $intro.fadeOut(400), TEMPO_INTRO_NIVEL);
 }
 
 /** Soma o acerto (se houve) e segue para a próxima pergunta ou para o resultado. */

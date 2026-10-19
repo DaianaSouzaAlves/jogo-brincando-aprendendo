@@ -35,10 +35,6 @@ body[data-parte="1"] {
     background-image: url('../img/fundoJogo.png');
 }
 
-body[data-parte="3"] {
-    background-image: url('../img/nivel/nivel.png');
-}
-
 .app {
     margin-inline: clamp(1rem, 3vw, 3rem);
 }

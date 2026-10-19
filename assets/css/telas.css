@@ -1,6 +1,6 @@
 /*
     telas.css - estilos de cada tela, na ordem do jogo:
-    1 início | 2 formulário | 3 nível | 4 perguntas (e ligação) | 5 resultado
+    1 início | 2 formulário | 4 perguntas (e ligação) | 5 resultado
  */
 
 /* ======================= TELA 1: INÍCIO ======================= */
@@ -98,35 +98,26 @@
 }
 
 
-/* ======================= TELA 3: NÍVEL ======================= */
-.parte-3 .niveis {
-    gap: clamp(12px, 4vw, 70px);
-    padding-top: 8vh;
+/* ======================= TELA 4: PERGUNTAS ======================= */
+/* PNG do nível: cobre a tela com fundo escurecido e a imagem no centro */
+.parte-4 .intro-nivel {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    background: rgba(0, 0, 0, .45);
 }
 
-.parte-3 .nivel {
-    display: block;
-    transition: transform .15s ease-in-out;
-}
-
-.parte-3 .nivel img {
-    display: block;
-    height: clamp(100px, 30vh, 320px);
-    max-width: 28vw;
+.parte-4 .intro-nivel img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 60vw;
+    max-height: 60vh;
     object-fit: contain;
     filter: drop-shadow(0 6px 8px rgba(0, 0, 0, .3));
 }
 
-.parte-3 .nivel:hover {
-    transform: translateY(-4px) scale(1.08);
-}
-
-.parte-3 .nivel:active {
-    transform: translateY(2px) scale(1.02);
-}
-
-
-/* ======================= TELA 4: PERGUNTAS ======================= */
 .parte-4 .pergunta {
     position: relative; /* referência do botão de som */
 }
@@ -261,17 +252,37 @@
 
 
 /* ======================= TELA 5: RESULTADO ======================= */
-.parte-5 .colorido {
-    --tam-titulo: 5vw;
+/* caixa onde ficava o resultado: as estrelas ocupam quase toda ela */
+.parte-5 .card-imagem.estrelas {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: min(75vw, 800px);
+    height: 32vh;
+    padding: 2vh 2vw;
 }
 
-.parte-5 .card-imagem {
-    margin: 10px 0;
-    justify-content: center;
-}
-
-.parte-5 .card-imagem img {
-    height: 40vh;
-    max-height: 400px;
+.parte-5 .estrela {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 32%;
+    max-height: 100%;
     object-fit: contain;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, .3));
+}
+
+.parte-5 .estrela.apagada {
+    filter: grayscale(1) brightness(1.3);
+    opacity: .4;
+}
+
+.parte-5 .botao-proximo img {
+    display: block;
+    height: clamp(70px, 14vh, 140px);
+    object-fit: contain;
+    transition: transform .15s ease-in-out;
+}
+
+.parte-5 .botao-proximo:hover img {
+    transform: scale(1.08);
 }
