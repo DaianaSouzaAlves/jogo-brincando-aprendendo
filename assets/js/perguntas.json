@@ -1,0 +1,789 @@
+{
+  "facil": [
+    {
+      "id": 1,
+      "pergunta": "Qual animal faz \"Miau\"?",
+      "correta": "Gato",
+      "alternativas": [
+        {
+          "texto": "Vaca",
+          "imagem": "1/imagem_01.png"
+        },
+        {
+          "texto": "Cachorro",
+          "imagem": "1/imagem_02.png"
+        },
+        {
+          "texto": "Gato",
+          "imagem": "1/imagem_03.png"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "pergunta": "Qual brinquedo começa com o som \"BO\"?",
+      "correta": "Bola",
+      "alternativas": [
+        {
+          "texto": "Pipa",
+          "imagem": "2/imagem_01.png"
+        },
+        {
+          "texto": "Carrinho",
+          "imagem": "2/imagem_02.png"
+        },
+        {
+          "texto": "Bola",
+          "imagem": "2/imagem_03.png"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "pergunta": "Qual bichinho começa com a letra A?",
+      "correta": "Abelha",
+      "alternativas": [
+        {
+          "texto": "Sapo",
+          "imagem": "3/imagem_01.png"
+        },
+        {
+          "texto": "Abelha",
+          "imagem": "3/imagem_02.png"
+        },
+        {
+          "texto": "Rato",
+          "imagem": "3/imagem_03.png"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "pergunta": "Qual animal está em cima da árvore?",
+      "cena": [
+        "4/imagem_01.png"
+      ],
+      "correta": "Passarinho",
+      "alternativas": [
+        {
+          "texto": "Cachorro",
+          "imagem": "4/imagem_02.png"
+        },
+        {
+          "texto": "Gato",
+          "imagem": "4/imagem_03.png"
+        },
+        {
+          "texto": "Passarinho",
+          "imagem": "4/imagem_04.png"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "pergunta": "Qual brinquedo está dentro da caixa?",
+      "cena": [
+        "5/imagem_01.png"
+      ],
+      "correta": "Urso de pelúcia",
+      "alternativas": [
+        {
+          "texto": "Carrinho",
+          "imagem": "5/imagem_02.png"
+        },
+        {
+          "texto": "Bola",
+          "imagem": "5/imagem_03.png"
+        },
+        {
+          "texto": "Urso de pelúcia",
+          "imagem": "5/imagem_04.png"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "pergunta": "Quantas maçãs tem dentro da cesta?",
+      "cena": [
+        "6/imagem_01.png"
+      ],
+      "correta": "4",
+      "alternativas": [
+        {
+          "texto": "4",
+          "imagem": "6/imagem_02.png"
+        },
+        {
+          "texto": "5",
+          "imagem": "6/imagem_03.png"
+        },
+        {
+          "texto": "1",
+          "imagem": "6/imagem_04.png"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "pergunta": "Quantas estrelas aparecem na imagem?",
+      "cena": [
+        "7/imagem_01.png"
+      ],
+      "correta": "7",
+      "alternativas": [
+        {
+          "texto": "6",
+          "imagem": "7/imagem_02.png"
+        },
+        {
+          "texto": "7",
+          "imagem": "7/imagem_03.png"
+        },
+        {
+          "texto": "8",
+          "imagem": "7/imagem_04.png"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "pergunta": "Qual cesta tem MAIS maçãs?",
+      "correta": "Cesta da direita",
+      "alternativas": [
+        {
+          "texto": "Cesta da esquerda",
+          "imagem": "8/imagem_01.png",
+          "recorte": [
+            0,
+            0,
+            0.5,
+            1
+          ]
+        },
+        {
+          "texto": "Cesta da direita",
+          "imagem": "8/imagem_01.png",
+          "recorte": [
+            0.5,
+            0,
+            0.5,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "pergunta": "De quem é essa sombra?",
+      "cena": [
+        "9/imagem_01.png"
+      ],
+      "correta": "Cachorro",
+      "alternativas": [
+        {
+          "texto": "Gato",
+          "imagem": "9/imagem_02.png"
+        },
+        {
+          "texto": "Rato",
+          "imagem": "9/imagem_03.png"
+        },
+        {
+          "texto": "Cachorro",
+          "imagem": "9/imagem_04.png"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "pergunta": "Qual é o mais gelado?",
+      "correta": "Sorvete",
+      "alternativas": [
+        {
+          "texto": "Sorvete",
+          "imagem": "10/imagem_01.png"
+        },
+        {
+          "texto": "Fogo",
+          "imagem": "10/imagem_02.png"
+        },
+        {
+          "texto": "Café",
+          "imagem": "10/imagem_03.png"
+        }
+      ]
+    }
+  ],
+  "medio": [
+    {
+      "id": 11,
+      "pergunta": "Qual animal rima com GATO?",
+      "correta": "Rato",
+      "alternativas": [
+        {
+          "texto": "Rato",
+          "imagem": "11/imagem_01.png",
+          "faixa": [
+            0,
+            3
+          ]
+        },
+        {
+          "texto": "Cachorro",
+          "imagem": "11/imagem_01.png",
+          "faixa": [
+            1,
+            3
+          ]
+        },
+        {
+          "texto": "Sapo",
+          "imagem": "11/imagem_01.png",
+          "faixa": [
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "pergunta": "Qual brinquedo começa com a mesma letra de BOLA?",
+      "correta": "Boneca",
+      "alternativas": [
+        {
+          "texto": "Carrinho",
+          "imagem": "12/imagem_01.png",
+          "faixa": [
+            0,
+            3
+          ]
+        },
+        {
+          "texto": "Boneca",
+          "imagem": "12/imagem_01.png",
+          "faixa": [
+            1,
+            3
+          ]
+        },
+        {
+          "texto": "Trem de brinquedo",
+          "imagem": "12/imagem_01.png",
+          "faixa": [
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "pergunta": "Qual animal faz o som \"Muuuu\"?",
+      "correta": "Vaca",
+      "alternativas": [
+        {
+          "texto": "Porco",
+          "imagem": "13/imagem_01.png"
+        },
+        {
+          "texto": "Vaca",
+          "imagem": "13/imagem_02.png"
+        },
+        {
+          "texto": "Galinha",
+          "imagem": "13/imagem_03.png"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "tipo": "ligacao",
+      "pergunta": "Arraste cada animal para sua sombra.",
+      "pares": [
+        {
+          "texto": "Gato"
+        },
+        {
+          "texto": "Cachorro"
+        },
+        {
+          "texto": "Coelho"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "pergunta": "Quem está escondido atrás da árvore?",
+      "cena": [
+        "15/imagem_01.png"
+      ],
+      "correta": "Leão",
+      "alternativas": [
+        {
+          "texto": "Leão",
+          "imagem": "15/imagem_02.png",
+          "faixa": [
+            0,
+            3
+          ]
+        },
+        {
+          "texto": "Macaco",
+          "imagem": "15/imagem_02.png",
+          "faixa": [
+            1,
+            3
+          ]
+        },
+        {
+          "texto": "Elefante",
+          "imagem": "15/imagem_02.png",
+          "faixa": [
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "pergunta": "O que está do lado de fora da casa?",
+      "cena": [
+        {
+          "imagem": "16/imagem_01.png",
+          "recorte": [
+            0.18,
+            0.19,
+            0.64,
+            0.6
+          ]
+        }
+      ],
+      "correta": "Bicicleta",
+      "alternativas": [
+        {
+          "texto": "Sofá",
+          "imagem": "16/imagem_02.png",
+          "faixa": [
+            0,
+            3
+          ]
+        },
+        {
+          "texto": "Bicicleta",
+          "imagem": "16/imagem_02.png",
+          "faixa": [
+            1,
+            3
+          ]
+        },
+        {
+          "texto": "Televisão",
+          "imagem": "16/imagem_02.png",
+          "faixa": [
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "pergunta": "Se juntarmos 2 maçãs com mais 2 maçãs, quantas ficam?",
+      "cena": [
+        "17/imagem_01.png",
+        "17/imagem_02.png",
+        "+",
+        "17/imagem_03.png",
+        "17/imagem_04.png"
+      ],
+      "correta": "4",
+      "alternativas": [
+        {
+          "texto": "3",
+          "imagem": "17/imagem_05.png"
+        },
+        {
+          "texto": "4",
+          "imagem": "17/imagem_06.png"
+        },
+        {
+          "texto": "5",
+          "imagem": "17/imagem_07.png"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "pergunta": "Havia 2 peixes. Adicionaram mais um. Quantos ficaram?",
+      "cena": [
+        "18/imagem_01.png",
+        "18/imagem_02.png",
+        "+",
+        "18/imagem_03.png"
+      ],
+      "correta": "3",
+      "alternativas": [
+        {
+          "texto": "1",
+          "imagem": "18/imagem_04.png"
+        },
+        {
+          "texto": "2",
+          "imagem": "18/imagem_05.png"
+        },
+        {
+          "texto": "3",
+          "imagem": "18/imagem_06.png"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "pergunta": "Qual borboleta é diferente das outras?",
+      "correta": "Borboleta vermelha",
+      "alternativas": [
+        {
+          "texto": "Borboleta azul",
+          "imagem": "19/imagem_01.png",
+          "faixa": [
+            0,
+            3
+          ]
+        },
+        {
+          "texto": "Borboleta azul",
+          "imagem": "19/imagem_01.png",
+          "faixa": [
+            1,
+            3
+          ]
+        },
+        {
+          "texto": "Borboleta vermelha",
+          "imagem": "19/imagem_01.png",
+          "faixa": [
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "pergunta": "O que é doce e gelado?",
+      "correta": "Sorvete",
+      "alternativas": [
+        {
+          "texto": "Pizza",
+          "imagem": "20/imagem_01.png",
+          "faixa": [
+            0,
+            3
+          ]
+        },
+        {
+          "texto": "Sorvete",
+          "imagem": "20/imagem_01.png",
+          "faixa": [
+            1,
+            3
+          ]
+        },
+        {
+          "texto": "Limão",
+          "imagem": "20/imagem_01.png",
+          "faixa": [
+            2,
+            3
+          ]
+        }
+      ]
+    }
+  ],
+  "dificil": [
+    {
+      "id": 21,
+      "pergunta": "Qual dessas frutas NÃO começa com o som de \"MA\"?",
+      "correta": "Banana",
+      "alternativas": [
+        {
+          "texto": "Maçã",
+          "imagem": "21/imagem_01.png",
+          "faixa": [
+            0,
+            3
+          ]
+        },
+        {
+          "texto": "Banana",
+          "imagem": "21/imagem_01.png",
+          "faixa": [
+            1,
+            3
+          ]
+        },
+        {
+          "texto": "Mamão",
+          "imagem": "21/imagem_01.png",
+          "faixa": [
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "pergunta": "Quantos \"pedaços\" tem a palavra BO-NE-CA?",
+      "correta": "3",
+      "alternativas": [
+        {
+          "texto": "2",
+          "imagem": "22/imagem_01.png"
+        },
+        {
+          "texto": "3",
+          "imagem": "22/imagem_02.png"
+        },
+        {
+          "texto": "4",
+          "imagem": "22/imagem_03.png"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "pergunta": "O nome de qual animal começa com a letra \"E\"?",
+      "correta": "Elefante",
+      "alternativas": [
+        {
+          "texto": "Elefante",
+          "imagem": "23/imagem_01.png",
+          "faixa": [
+            0,
+            3
+          ]
+        },
+        {
+          "texto": "Cachorro",
+          "imagem": "23/imagem_01.png",
+          "faixa": [
+            1,
+            3
+          ]
+        },
+        {
+          "texto": "Leão",
+          "imagem": "23/imagem_01.png",
+          "faixa": [
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "pergunta": "Qual animal está mais longe da casa?",
+      "cena": [
+        {
+          "imagem": "24/imagem_01.png",
+          "recorte": [
+            0,
+            0.12,
+            1,
+            0.46
+          ]
+        }
+      ],
+      "correta": "Cavalo",
+      "alternativas": [
+        {
+          "texto": "Cachorro",
+          "imagem": "24/imagem_01.png",
+          "recorte": [
+            0.075,
+            0.6,
+            0.24,
+            0.38
+          ]
+        },
+        {
+          "texto": "Cavalo",
+          "imagem": "24/imagem_01.png",
+          "recorte": [
+            0.385,
+            0.6,
+            0.24,
+            0.38
+          ]
+        },
+        {
+          "texto": "Gato",
+          "imagem": "24/imagem_01.png",
+          "recorte": [
+            0.69,
+            0.6,
+            0.24,
+            0.38
+          ]
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "pergunta": "O que está em cima da prateleira?",
+      "cena": [
+        {
+          "imagem": "25/imagem_01.png",
+          "recorte": [
+            0,
+            0.09,
+            1,
+            0.47
+          ]
+        }
+      ],
+      "correta": "Vaso vermelho",
+      "alternativas": [
+        {
+          "texto": "Livro azul",
+          "imagem": "25/imagem_02.png",
+          "faixa": [
+            0,
+            3
+          ]
+        },
+        {
+          "texto": "Sapato",
+          "imagem": "25/imagem_02.png",
+          "faixa": [
+            1,
+            3
+          ]
+        },
+        {
+          "texto": "Vaso vermelho",
+          "imagem": "25/imagem_02.png",
+          "faixa": [
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "pergunta": "Qual animal está ENTRE o leão e a girafa?",
+      "cena": [
+        {
+          "imagem": "26/imagem_01.png",
+          "recorte": [
+            0.054,
+            0.19,
+            0.893,
+            0.53
+          ]
+        }
+      ],
+      "correta": "O urso",
+      "alternativas": [
+        {
+          "texto": "O urso"
+        },
+        {
+          "texto": "O elefante"
+        },
+        {
+          "texto": "O leão"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "pergunta": "Pedro tem 5 carrinhos. Ele ganhou mais 3. Com quantos ficou?",
+      "cena": [
+        "27/imagem_01.png",
+        "27/imagem_02.png",
+        "27/imagem_03.png",
+        "27/imagem_04.png",
+        "27/imagem_05.png",
+        "+",
+        "27/imagem_01.png",
+        "27/imagem_02.png",
+        "27/imagem_03.png"
+      ],
+      "correta": "8",
+      "alternativas": [
+        {
+          "texto": "7",
+          "imagem": "27/imagem_06.png"
+        },
+        {
+          "texto": "8",
+          "imagem": "27/imagem_07.png"
+        },
+        {
+          "texto": "9",
+          "imagem": "27/imagem_08.png"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "pergunta": "Quantas pernas tem uma aranha?",
+      "cena": [
+        "28/imagem_01.png"
+      ],
+      "correta": "8",
+      "alternativas": [
+        {
+          "texto": "4",
+          "imagem": "28/imagem_02.png"
+        },
+        {
+          "texto": "6",
+          "imagem": "28/imagem_03.png"
+        },
+        {
+          "texto": "8",
+          "imagem": "28/imagem_04.png"
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "pergunta": "Qual destes animais tem o corpo coberto de penas?",
+      "correta": "Passarinho",
+      "alternativas": [
+        {
+          "texto": "Cachorro",
+          "imagem": "29/imagem_01.png"
+        },
+        {
+          "texto": "Peixe",
+          "imagem": "29/imagem_02.png"
+        },
+        {
+          "texto": "Passarinho",
+          "imagem": "29/imagem_03.png"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "tipo": "ligacao",
+      "pergunta": "Encontre a sombra de cada árvore.",
+      "pares": [
+        {
+          "texto": "Macieira"
+        },
+        {
+          "texto": "Árvore"
+        }
+      ]
+    }
+  ]
+}

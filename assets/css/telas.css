@@ -1,0 +1,276 @@
+/*
+    telas.css - estilos de cada tela, na ordem do jogo:
+    1 início | 2 formulário | 3 nível | 4 perguntas (e ligação) | 5 resultado
+ */
+
+/* ======================= TELA 1: INÍCIO ======================= */
+/* Duas colunas iguais: logo à esquerda e botão à direita, cada um centralizado */
+.inicio {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+}
+
+.logo-jogo {
+    max-width: 90%;
+    max-height: 80vh;
+    object-fit: contain;
+}
+
+.botao-iniciar {
+    --tam: min(24vw, 60vh); /* acompanha a largura, sem passar de 60% da altura */
+    display: flex;
+    width: var(--tam);
+    height: var(--tam);
+    background: url("../img/botao_principal_1.png") center / contain no-repeat;
+    transition: transform .15s ease-in-out;
+}
+
+.botao-iniciar:hover {
+    transform: scale(1.1);
+}
+
+.botao-iniciar.clicado {
+    background-image: url("../img/botao_principal_2.png");
+}
+
+
+/* ======================= TELA 2: FORMULÁRIO ======================= */
+.parte-2 .dupla {
+    width: 150%;
+    height: 100%;
+    object-fit: contain;
+    object-position: left center;
+    transform: translateX(-12%); /* um pouco para a esquerda */
+}
+
+.parte-2 .titulo-vamos-jogar {
+    height: clamp(90px, 22vh, 260px);
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.parte-2 .form-group {
+    position: relative;
+    display: flex;
+}
+
+.parte-2 .form-group label {
+    position: absolute;
+    bottom: 12px;
+    left: 44px;
+    display: flex;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+/* ícone à esquerda de cada campo */
+.parte-2 .form-group img {
+    position: absolute;
+    left: -58px;
+    bottom: -34px;
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+}
+
+.parte-2 .form-group input {
+    height: 52px;
+    border: 3px solid;
+    border-radius: 0 999px 999px 0;
+    font-weight: 700;
+}
+
+.parte-2 input[name="nome"] {
+    border-color: #22AFFF;
+    padding-left: 118px;
+}
+
+.parte-2 input[name="idade"] {
+    border-color: #7FC62B;
+    padding-left: 118px;
+}
+
+.parte-2 input[name="escola"] {
+    border-color: #F1483C;
+    padding-left: 130px;
+}
+
+
+/* ======================= TELA 3: NÍVEL ======================= */
+.parte-3 .niveis {
+    gap: clamp(12px, 4vw, 70px);
+    padding-top: 8vh;
+}
+
+.parte-3 .nivel {
+    display: block;
+    transition: transform .15s ease-in-out;
+}
+
+.parte-3 .nivel img {
+    display: block;
+    height: clamp(100px, 30vh, 320px);
+    max-width: 28vw;
+    object-fit: contain;
+    filter: drop-shadow(0 6px 8px rgba(0, 0, 0, .3));
+}
+
+.parte-3 .nivel:hover {
+    transform: translateY(-4px) scale(1.08);
+}
+
+.parte-3 .nivel:active {
+    transform: translateY(2px) scale(1.02);
+}
+
+
+/* ======================= TELA 4: PERGUNTAS ======================= */
+.parte-4 .pergunta {
+    position: relative; /* referência do botão de som */
+}
+
+/* personagem (menino/menina) em pé na base da tela, à direita */
+.parte-4 .personagem {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    object-position: bottom;
+    filter: drop-shadow(0 6px 8px rgba(0, 0, 0, .25));
+}
+
+/* imagem do enunciado: sozinha fica grande; várias (contas) dividem a linha */
+.parte-4 .cena {
+    flex-wrap: wrap;
+}
+
+.parte-4 .cena-img {
+    height: 11vh;
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 18px;
+}
+
+.parte-4 .cena-img:only-child {
+    height: 25vh;
+}
+
+.parte-4 .sinal-cena {
+    font-family: var(--fonte);
+    font-size: 6vh;
+    color: #ff4d4d;
+    text-shadow: -2px -2px 0 white, 2px -2px 0 white, 2px 2px 0 white, -2px 2px 0 white;
+}
+
+/* ---------- Pergunta de ligação (ligacao.js) ----------
+   Itens na coluna da esquerda, sombras na da direita; as linhas ficam num <svg> por cima */
+.ligacao {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 6%;
+}
+
+.ligacao-coluna {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.ligacao-linhas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.ligacao-linhas line {
+    stroke: #19c93a;
+    stroke-width: 6;
+    stroke-linecap: round;
+}
+
+.ligacao-linhas line.provisoria {
+    stroke-dasharray: 2 12; /* linha pontilhada enquanto arrasta */
+}
+
+.ligacao-linhas line.errada {
+    stroke: #e0312f;
+}
+
+.peca {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: clamp(70px, 15vh, 180px);
+    aspect-ratio: 1 / 1;
+    border-radius: 24px;
+    cursor: pointer;
+    user-select: none;
+    transition: transform .15s ease-in-out;
+}
+
+.peca img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+/* texto provisório: aparece enquanto o item ainda não tem imagem */
+.peca-provisoria {
+    padding: 8px;
+    text-align: center;
+    font-weight: 900;
+    font-size: clamp(14px, 1.6vw, 26px);
+    line-height: 1.1;
+}
+
+.peca-item {
+    background: #fff;
+    border: 5px solid #007bff;
+}
+
+.peca-sombra {
+    background: rgba(40, 40, 60, .35);
+    border: 5px dashed #444;
+}
+
+.peca.selecionada {
+    transform: scale(1.08);
+    border-color: #f7931e;
+}
+
+.peca.ligado {
+    background: #d4f8d4;
+    border: 5px solid #05961a;
+    cursor: default;
+}
+
+.peca.errou {
+    animation: tremer .4s;
+}
+
+@keyframes tremer {
+    25% { transform: translateX(-8px); }
+    75% { transform: translateX(8px); }
+}
+
+
+/* ======================= TELA 5: RESULTADO ======================= */
+.parte-5 .colorido {
+    --tam-titulo: 5vw;
+}
+
+.parte-5 .card-imagem {
+    margin: 10px 0;
+    justify-content: center;
+}
+
+.parte-5 .card-imagem img {
+    height: 40vh;
+    max-height: 400px;
+    object-fit: contain;
+}
