@@ -159,7 +159,7 @@ body[data-parte="3"] {
 
 .card-alternativa {
     position: relative;
-    height: clamp(110px, 31vh, 340px);
+    height: clamp(90px, min(31vh, 17vw), 340px); /* limitado pela altura e pela largura: os 3 cabem lado a lado */
     aspect-ratio: 1 / 1;
     padding: 0 !important;
     border-radius: 24px;

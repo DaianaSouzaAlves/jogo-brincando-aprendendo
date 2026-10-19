@@ -18,7 +18,7 @@
 }
 
 .botao-iniciar {
-    --tam: min(24vw, 60vh); /* acompanha a largura, sem passar de 60% da altura */
+    --tam: min(20vw, 50vh); /* acompanha a largura, sem passar de 50% da altura */
     display: flex;
     width: var(--tam);
     height: var(--tam);
@@ -37,15 +37,16 @@
 
 /* ======================= TELA 2: FORMULÁRIO ======================= */
 .parte-2 .dupla {
-    width: 150%;
-    height: 100%;
+    width: 125%;
+    height: 90%;
+    margin-top: 10%;
     object-fit: contain;
-    object-position: left center;
-    transform: translateX(-12%); /* um pouco para a esquerda */
+    object-position: left bottom;
+    transform: translateX(-3%); /* um pouco para a esquerda, sem sair da tela */
 }
 
 .parte-2 .titulo-vamos-jogar {
-    height: clamp(90px, 22vh, 260px);
+    height: clamp(120px, 30vh, 340px);
     max-width: 100%;
     object-fit: contain;
 }
@@ -145,14 +146,14 @@
 }
 
 .parte-4 .cena-img {
-    height: 11vh;
+    height: min(11vh, 6vw);
     max-width: 100%;
     object-fit: contain;
     border-radius: 18px;
 }
 
 .parte-4 .cena-img:only-child {
-    height: 25vh;
+    height: min(25vh, 14vw);
 }
 
 .parte-4 .sinal-cena {
@@ -204,7 +205,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: clamp(70px, 15vh, 180px);
+    height: clamp(70px, min(15vh, 10vw), 180px);
     aspect-ratio: 1 / 1;
     border-radius: 24px;
     cursor: pointer;
