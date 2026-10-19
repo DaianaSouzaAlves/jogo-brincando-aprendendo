@@ -12,13 +12,13 @@
 }
 
 .logo-jogo {
-    max-width: 90%;
+    max-width: 100%;
     max-height: 80vh;
     object-fit: contain;
 }
 
 .botao-iniciar {
-    --tam: min(20vw, 50vh); /* acompanha a largura, sem passar de 50% da altura */
+    --tam: min(22vw, 50vh); /* acompanha a largura, sem passar de 50% da altura */
     display: flex;
     width: var(--tam);
     height: var(--tam);
