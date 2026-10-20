@@ -154,32 +154,7 @@
     text-shadow: -2px -2px 0 white, 2px -2px 0 white, 2px 2px 0 white, -2px 2px 0 white;
 }
 
-/* ---------- Feedback de acerto/erro (múltipla escolha) ---------- */
-.parte-4 .card {
-    position: relative;
-}
-
-.parte-4 .feedback {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 1.5vh;
-    text-align: center;
-    font-family: var(--fonte);
-    font-size: clamp(18px, 2.6vw, 38px);
-    pointer-events: none;
-}
-
-.parte-4 .feedback.certo {
-    color: #05961a;
-    animation: aparecer .3s;
-}
-
-.parte-4 .feedback.errado {
-    color: #e0312f;
-    animation: aparecer .3s;
-}
-
+/* ---------- Feedback de acerto/erro (múltipla escolha): só movimento e cor ---------- */
 .parte-4 .alternativas.respondida .card-alternativa {
     pointer-events: none;
 }
@@ -222,10 +197,6 @@
 
 @keyframes pular {
     40% { transform: translateY(-14px) scale(1.06); }
-}
-
-@keyframes aparecer {
-    from { opacity: 0; transform: translateY(8px); }
 }
 
 /* ---------- Pergunta de ligação (ligacao.js) ----------

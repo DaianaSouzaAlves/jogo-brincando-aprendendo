@@ -72,8 +72,6 @@ function resolverImagem(item) {
 
 const NIVEIS = ['facil', 'medio', 'dificil'];
 const TEMPO_FEEDBACK = 1300; // ms que o acerto/erro fica na tela antes da próxima pergunta
-const FRASES_ACERTO = ['Muito bem!', 'Isso aí!', 'Parabéns!', 'Você acertou!'];
-const FRASES_ERRO = ['Quase! Vamos tentar a próxima!', 'Ops! Na próxima você consegue!', 'Não foi dessa vez!'];
 const TEMPO_INTRO_NIVEL = 2000; // ms que o PNG do nível fica na tela
 
 /** Sorteia a ordem das perguntas, mostra o PNG do nível por um instante e começa. */
@@ -106,7 +104,6 @@ function proximaPergunta(i, acertou) {
 
 function montarPergunta(i) {
     const objPergunta = perguntasNivel[i];
-    $('.parte-4 .feedback').removeClass('certo errado').empty();
 
     const $pergunta = $('.parte-4 .pergunta');
     $pergunta.html(montarHtmlColorido(objPergunta.pergunta));
@@ -156,16 +153,12 @@ function responder($escolhido, objPergunta, i) {
     $alternativas.addClass('respondida');
 
     const acertou = $escolhido.data('texto') === objPergunta.correta;
-    const frases = acertou ? FRASES_ACERTO : FRASES_ERRO;
     $escolhido.addClass(acertou ? 'certo' : 'errado');
     if (!acertou) {
         $alternativas.find('.card-alternativa')
             .filter((_, el) => $(el).data('texto') === objPergunta.correta)
             .addClass('certo');
     }
-    $('.parte-4 .feedback')
-        .addClass(acertou ? 'certo' : 'errado')
-        .text(frases[Math.floor(Math.random() * frases.length)]);
 
     setTimeout(() => proximaPergunta(i, acertou), TEMPO_FEEDBACK);
 }
