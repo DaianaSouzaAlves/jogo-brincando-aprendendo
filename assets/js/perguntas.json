@@ -107,7 +107,7 @@
       "cena": [
         "6/imagem_01.png"
       ],
-      "correta": "4",
+      "correta": "5",
       "alternativas": [
         {
           "texto": "4",
@@ -148,28 +148,11 @@
     {
       "id": 8,
       "pergunta": "Qual cesta tem MAIS maçãs?",
-      "correta": "Cesta da direita",
+      "correta": "Cesta 1",
       "alternativas": [
-        {
-          "texto": "Cesta da esquerda",
-          "imagem": "8/imagem_01.png",
-          "recorte": [
-            0,
-            0,
-            0.5,
-            1
-          ]
-        },
-        {
-          "texto": "Cesta da direita",
-          "imagem": "8/imagem_01.png",
-          "recorte": [
-            0.5,
-            0,
-            0.5,
-            1
-          ]
-        }
+        { "texto": "Cesta 1", "imagem": "8/imagem_01.png" },
+        { "texto": "Cesta 2", "imagem": "8/imagem_02.png" },
+        { "texto": "Cesta 3", "imagem": "8/imagem_03.png" }
       ]
     },
     {
