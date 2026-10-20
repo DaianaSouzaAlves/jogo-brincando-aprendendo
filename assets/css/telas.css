@@ -154,6 +154,80 @@
     text-shadow: -2px -2px 0 white, 2px -2px 0 white, 2px 2px 0 white, -2px 2px 0 white;
 }
 
+/* ---------- Feedback de acerto/erro (múltipla escolha) ---------- */
+.parte-4 .card {
+    position: relative;
+}
+
+.parte-4 .feedback {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 1.5vh;
+    text-align: center;
+    font-family: var(--fonte);
+    font-size: clamp(18px, 2.6vw, 38px);
+    pointer-events: none;
+}
+
+.parte-4 .feedback.certo {
+    color: #05961a;
+    animation: aparecer .3s;
+}
+
+.parte-4 .feedback.errado {
+    color: #e0312f;
+    animation: aparecer .3s;
+}
+
+.parte-4 .alternativas.respondida .card-alternativa {
+    pointer-events: none;
+}
+
+.parte-4 .card-alternativa.certo {
+    outline: 8px solid #19c93a;
+    animation: pular .5s;
+}
+
+.parte-4 .card-alternativa.errado {
+    outline: 8px solid #e0312f;
+    animation: tremer .4s;
+}
+
+.parte-4 .card-alternativa.certo::after,
+.parte-4 .card-alternativa.errado::after {
+    position: absolute;
+    top: -14px;
+    right: -14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.parte-4 .card-alternativa.certo::after {
+    content: "✓";
+    background: #19c93a;
+}
+
+.parte-4 .card-alternativa.errado::after {
+    content: "✗";
+    background: #e0312f;
+}
+
+@keyframes pular {
+    40% { transform: translateY(-14px) scale(1.06); }
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(8px); }
+}
+
 /* ---------- Pergunta de ligação (ligacao.js) ----------
    Itens na coluna da esquerda, sombras na da direita; as linhas ficam num <svg> por cima */
 .ligacao {
