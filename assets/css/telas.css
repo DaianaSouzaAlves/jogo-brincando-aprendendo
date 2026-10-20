@@ -1,6 +1,6 @@
 /*
     telas.css - estilos de cada tela, na ordem do jogo:
-    1 início | 2 formulário | 4 perguntas (e ligação) | 5 resultado
+    1 início | 4 perguntas (e ligação) | 5 resultado
  */
 
 /* ======================= TELA 1: INÍCIO ======================= */
@@ -32,69 +32,6 @@
 
 .botao-iniciar.clicado {
     background-image: url("../img/botao_principal_2.png");
-}
-
-
-/* ======================= TELA 2: FORMULÁRIO ======================= */
-.parte-2 .dupla {
-    width: 125%;
-    height: 90%;
-    margin-top: 10%;
-    object-fit: contain;
-    object-position: left bottom;
-    transform: translateX(-3%); /* um pouco para a esquerda, sem sair da tela */
-}
-
-.parte-2 .titulo-vamos-jogar {
-    height: clamp(120px, 30vh, 340px);
-    max-width: 100%;
-    object-fit: contain;
-}
-
-.parte-2 .form-group {
-    position: relative;
-    display: flex;
-}
-
-.parte-2 .form-group label {
-    position: absolute;
-    bottom: 12px;
-    left: 44px;
-    display: flex;
-    font-weight: 800;
-    font-size: 20px;
-}
-
-/* ícone à esquerda de cada campo */
-.parte-2 .form-group img {
-    position: absolute;
-    left: -58px;
-    bottom: -34px;
-    width: 120px;
-    height: 120px;
-    object-fit: contain;
-}
-
-.parte-2 .form-group input {
-    height: 52px;
-    border: 3px solid;
-    border-radius: 0 999px 999px 0;
-    font-weight: 700;
-}
-
-.parte-2 input[name="nome"] {
-    border-color: #22AFFF;
-    padding-left: 118px;
-}
-
-.parte-2 input[name="idade"] {
-    border-color: #7FC62B;
-    padding-left: 118px;
-}
-
-.parte-2 input[name="escola"] {
-    border-color: #F1483C;
-    padding-left: 130px;
 }
 
 

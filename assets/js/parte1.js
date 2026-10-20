@@ -1,8 +1,8 @@
-/** TELA 1: início - o botão de play leva ao formulário **/
+/** TELA 1: início - o botão de play começa o jogo no nível fácil **/
 (() => {
     const $btn = $('.parte-1 .botao-iniciar');
 
-    $btn.on('click', () => trocaParte(2));
+    $btn.on('click', () => iniciarNivel('facil'));
 
     // imagem do botão "apertado" enquanto o mouse está pressionado
     $btn.on('mousedown', () => {
