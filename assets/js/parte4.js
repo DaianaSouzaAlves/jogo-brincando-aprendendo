@@ -173,6 +173,7 @@ function responder($escolhido, objPergunta, i) {
     $alternativas.addClass('respondida');
 
     const acertou = $escolhido.data('texto') === objPergunta.correta;
+    tocarFeedback(acertou);
     $escolhido.addClass(acertou ? 'certo' : 'errado');
     if (!acertou) {
         $alternativas.find('.card-alternativa')

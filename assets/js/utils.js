@@ -77,6 +77,12 @@ function playSound(arquivo, volume = 1, id = null, onEnd = null, onFalha = null)
     return audio;
 }
 
+/** Som de acerto ou erro; corta a fala da pergunta/alternativa que estiver tocando. */
+function tocarFeedback(acertou) {
+    pararSom('p');
+    playSound(acertou ? 'acerto.mp3' : 'erro.mp3', .35, 'feedback');
+}
+
 /** Interrompe o som com esse id, se estiver tocando. */
 function pararSom(id) {
     if (audiosReproduzindo[id]) {
@@ -85,9 +91,34 @@ function pararSom(id) {
     }
 }
 
+/* Botão de música (canto inferior direito): liga/desliga só a música de fundo; a escolha fica salva */
+let musicaLigada = true;
+try {
+    musicaLigada = localStorage.getItem('musica') !== 'desligada';
+} catch (e) { /* sem localStorage: começa ligada */ }
+
 /** Música de fundo em loop. O navegador só libera áudio depois do primeiro clique. */
 function tocarBackground() {
-    playSound('background.mp3', .01, 'bg-music', tocarBackground);
+    const audio = playSound('background.mp3', .01, 'bg-music', tocarBackground);
+    audio.muted = !musicaLigada;
 }
+
+function atualizarBotaoMusica() {
+    $('.botao-musica')
+        .attr({'aria-pressed': musicaLigada, title: musicaLigada ? 'Desligar música' : 'Ligar música'})
+        .find('i').attr('class', musicaLigada ? 'fa fa-music' : 'fa fa-volume-xmark');
+}
+
+$('.botao-musica').on('click', () => {
+    musicaLigada = !musicaLigada;
+    try {
+        localStorage.setItem('musica', musicaLigada ? 'ligada' : 'desligada');
+    } catch (e) { /* ignora */ }
+    if (audiosReproduzindo['bg-music']) {
+        audiosReproduzindo['bg-music'].muted = !musicaLigada;
+    }
+    atualizarBotaoMusica();
+});
+atualizarBotaoMusica();
 
 $(document).one('click touchstart', tocarBackground);

@@ -78,6 +78,7 @@ function montarLigacao(objPergunta, i) {
         const certo = $item.data('par') === $alvo.data('par');
         const linha = desenharLinha(ponto($item, 'direita'), ponto($alvo, 'esquerda'), certo ? '' : 'errada');
 
+        tocarFeedback(certo);
         if (certo) {
             $item.add($alvo).addClass('ligado');
             restantes--;
