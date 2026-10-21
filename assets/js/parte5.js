@@ -17,6 +17,8 @@ function mostrarResultado(acertos, total) {
     // 1 estrela: só jogar novamente. 2 ou 3: o próximo nível vira botão (no último nível, só repetir)
     $tela.find('.botao-proximo').toggle(temProximo);
     $tela.find('.botao-repetir').toggle(!temProximo);
+    clearTimeout(timerFalaPergunta);
+    pararSom('p'); // a fala da última pergunta não continua na tela de resultado
     trocaParte(5);
 }
 

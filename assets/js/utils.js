@@ -44,8 +44,9 @@ const audiosReproduzindo = {};
  * Toca assets/sound/<arquivo>.
  * @param id    chave para interromper o som anterior com o mesmo id (opcional)
  * @param onEnd função chamada quando o som termina (opcional)
+ * @param onFalha função chamada se o navegador não deixar tocar, por ex. sem clique antes (opcional)
  */
-function playSound(arquivo, volume = 1, id = null, onEnd = null) {
+function playSound(arquivo, volume = 1, id = null, onEnd = null, onFalha = null) {
     id = id ?? Math.floor(Math.random() * 9000) + 1000;
 
     if (audiosReproduzindo[id]) {
@@ -66,9 +67,22 @@ function playSound(arquivo, volume = 1, id = null, onEnd = null) {
             onEnd();
         }
     };
-    audio.play().catch(e => console.error('Erro ao tocar o som:', e));
+    audio.play().catch(e => {
+        console.error('Erro ao tocar o som:', e);
+        if (typeof onFalha === 'function') {
+            onFalha(e);
+        }
+    });
 
     return audio;
+}
+
+/** Interrompe o som com esse id, se estiver tocando. */
+function pararSom(id) {
+    if (audiosReproduzindo[id]) {
+        audiosReproduzindo[id].pause();
+        delete audiosReproduzindo[id];
+    }
 }
 
 /** Música de fundo em loop. O navegador só libera áudio depois do primeiro clique. */

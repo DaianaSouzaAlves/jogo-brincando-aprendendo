@@ -2,7 +2,7 @@
 (() => {
     const $btn = $('.parte-1 .botao-iniciar');
 
-    $btn.on('click', () => iniciarNivel('facil'));
+    $btn.on('click', () => perguntasProntas.then(() => iniciarNivel('facil')));
 
     // imagem do botão "apertado" enquanto o mouse está pressionado
     $btn.on('mousedown', () => {

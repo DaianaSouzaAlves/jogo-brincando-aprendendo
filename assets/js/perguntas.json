@@ -7,17 +7,21 @@
       "alternativas": [
         {
           "texto": "Vaca",
-          "imagem": "1/imagem_01.png"
+          "imagem": "1/imagem_01.png",
+          "dub": "respostas/vaca.mp3"
         },
         {
           "texto": "Cachorro",
-          "imagem": "1/imagem_02.png"
+          "imagem": "1/imagem_02.png",
+          "dub": "respostas/cachorro.mp3"
         },
         {
           "texto": "Gato",
-          "imagem": "1/imagem_03.png"
+          "imagem": "1/imagem_03.png",
+          "dub": "respostas/gato.mp3"
         }
-      ]
+      ],
+      "dub": "perguntas/pergunta01.mp3"
     },
     {
       "id": 2,
@@ -26,17 +30,21 @@
       "alternativas": [
         {
           "texto": "Pipa",
-          "imagem": "2/imagem_01.png"
+          "imagem": "2/imagem_01.png",
+          "dub": "respostas/pipa.mp3"
         },
         {
           "texto": "Carrinho",
-          "imagem": "2/imagem_02.png"
+          "imagem": "2/imagem_02.png",
+          "dub": "respostas/carrinho.mp3"
         },
         {
           "texto": "Bola",
-          "imagem": "2/imagem_03.png"
+          "imagem": "2/imagem_03.png",
+          "dub": "respostas/bola.mp3"
         }
-      ]
+      ],
+      "dub": "perguntas/pergunta02.mp3"
     },
     {
       "id": 3,
@@ -45,17 +53,21 @@
       "alternativas": [
         {
           "texto": "Sapo",
-          "imagem": "3/imagem_01.png"
+          "imagem": "3/imagem_01.png",
+          "dub": "respostas/sapo.mp3"
         },
         {
           "texto": "Abelha",
-          "imagem": "3/imagem_02.png"
+          "imagem": "3/imagem_02.png",
+          "dub": "respostas/abelha.mp3"
         },
         {
           "texto": "Rato",
-          "imagem": "3/imagem_03.png"
+          "imagem": "3/imagem_03.png",
+          "dub": "respostas/rato.mp3"
         }
-      ]
+      ],
+      "dub": "perguntas/pergunta03.mp3"
     },
     {
       "id": 4,
@@ -67,17 +79,21 @@
       "alternativas": [
         {
           "texto": "Cachorro",
-          "imagem": "4/imagem_02.png"
+          "imagem": "4/imagem_02.png",
+          "dub": "respostas/cachorro.mp3"
         },
         {
           "texto": "Gato",
-          "imagem": "4/imagem_03.png"
+          "imagem": "4/imagem_03.png",
+          "dub": "respostas/gato.mp3"
         },
         {
           "texto": "Passarinho",
-          "imagem": "4/imagem_04.png"
+          "imagem": "4/imagem_04.png",
+          "dub": "respostas/passarinho.mp3"
         }
-      ]
+      ],
+      "dub": "perguntas/pergunta04.mp3"
     },
     {
       "id": 5,
@@ -89,17 +105,21 @@
       "alternativas": [
         {
           "texto": "Carrinho",
-          "imagem": "5/imagem_02.png"
+          "imagem": "5/imagem_02.png",
+          "dub": "respostas/carrinho.mp3"
         },
         {
           "texto": "Bola",
-          "imagem": "5/imagem_03.png"
+          "imagem": "5/imagem_03.png",
+          "dub": "respostas/bola.mp3"
         },
         {
           "texto": "Urso de pelúcia",
-          "imagem": "5/imagem_04.png"
+          "imagem": "5/imagem_04.png",
+          "dub": "respostas/urso.mp3"
         }
-      ]
+      ],
+      "dub": "perguntas/pergunta05.mp3"
     },
     {
       "id": 6,
@@ -111,17 +131,21 @@
       "alternativas": [
         {
           "texto": "4",
-          "imagem": "6/imagem_02.png"
+          "imagem": "6/imagem_02.png",
+          "dub": "respostas/numero4.mp3"
         },
         {
           "texto": "5",
-          "imagem": "6/imagem_03.png"
+          "imagem": "6/imagem_03.png",
+          "dub": "respostas/numero5.mp3"
         },
         {
           "texto": "1",
-          "imagem": "6/imagem_04.png"
+          "imagem": "6/imagem_04.png",
+          "dub": "respostas/numero1.mp3"
         }
-      ]
+      ],
+      "dub": "perguntas/pergunta06.mp3"
     },
     {
       "id": 7,
@@ -133,27 +157,44 @@
       "alternativas": [
         {
           "texto": "6",
-          "imagem": "7/imagem_02.png"
+          "imagem": "7/imagem_02.png",
+          "dub": "respostas/numero6.mp3"
         },
         {
           "texto": "7",
-          "imagem": "7/imagem_03.png"
+          "imagem": "7/imagem_03.png",
+          "dub": "respostas/numero7.mp3"
         },
         {
           "texto": "8",
-          "imagem": "7/imagem_04.png"
+          "imagem": "7/imagem_04.png",
+          "dub": "respostas/numero8.mp3"
         }
-      ]
+      ],
+      "dub": "perguntas/pergunta07.mp3"
     },
     {
       "id": 8,
       "pergunta": "Qual cesta tem MAIS maçãs?",
       "correta": "Cesta 1",
       "alternativas": [
-        { "texto": "Cesta 1", "imagem": "8/imagem_01.png" },
-        { "texto": "Cesta 2", "imagem": "8/imagem_02.png" },
-        { "texto": "Cesta 3", "imagem": "8/imagem_03.png" }
-      ]
+        {
+          "texto": "Cesta 1",
+          "imagem": "8/imagem_01.png",
+          "dub": "respostas/cesta1.mp3"
+        },
+        {
+          "texto": "Cesta 2",
+          "imagem": "8/imagem_02.png",
+          "dub": "respostas/cesta2.mp3"
+        },
+        {
+          "texto": "Cesta 3",
+          "imagem": "8/imagem_03.png",
+          "dub": "respostas/cesta3.mp3"
+        }
+      ],
+      "dub": "perguntas/pergunta08.mp3"
     },
     {
       "id": 9,
@@ -165,17 +206,21 @@
       "alternativas": [
         {
           "texto": "Gato",
-          "imagem": "9/imagem_02.png"
+          "imagem": "9/imagem_02.png",
+          "dub": "respostas/gato.mp3"
         },
         {
           "texto": "Rato",
-          "imagem": "9/imagem_03.png"
+          "imagem": "9/imagem_03.png",
+          "dub": "respostas/rato.mp3"
         },
         {
           "texto": "Cachorro",
-          "imagem": "9/imagem_04.png"
+          "imagem": "9/imagem_04.png",
+          "dub": "respostas/cachorro.mp3"
         }
-      ]
+      ],
+      "dub": "perguntas/pergunta09.mp3"
     },
     {
       "id": 10,
@@ -184,17 +229,21 @@
       "alternativas": [
         {
           "texto": "Sorvete",
-          "imagem": "10/imagem_01.png"
+          "imagem": "10/imagem_01.png",
+          "dub": "respostas/sorvete.mp3"
         },
         {
           "texto": "Fogo",
-          "imagem": "10/imagem_02.png"
+          "imagem": "10/imagem_02.png",
+          "dub": "respostas/fogo.mp3"
         },
         {
           "texto": "Café",
-          "imagem": "10/imagem_03.png"
+          "imagem": "10/imagem_03.png",
+          "dub": "respostas/cafequente.mp3"
         }
-      ]
+      ],
+      "dub": "perguntas/pergunta10.mp3"
     }
   ],
   "medio": [
@@ -209,7 +258,8 @@
           "faixa": [
             0,
             3
-          ]
+          ],
+          "dub": "respostas/rato.mp3"
         },
         {
           "texto": "Cachorro",
@@ -217,7 +267,8 @@
           "faixa": [
             1,
             3
-          ]
+          ],
+          "dub": "respostas/cachorro.mp3"
         },
         {
           "texto": "Sapo",
@@ -225,9 +276,11 @@
           "faixa": [
             2,
             3
-          ]
+          ],
+          "dub": "respostas/sapo.mp3"
         }
-      ]
+      ],
+      "dub": "perguntas/pergunta11.mp3"
     },
     {
       "id": 12,
@@ -240,7 +293,8 @@
           "faixa": [
             0,
             3
-          ]
+          ],
+          "dub": "respostas/carrinho.mp3"
         },
         {
           "texto": "Boneca",
@@ -248,7 +302,8 @@
           "faixa": [
             1,
             3
-          ]
+          ],
+          "dub": "respostas/boneca.mp3"
         },
         {
           "texto": "Trem de brinquedo",
@@ -256,9 +311,11 @@
           "faixa": [
             2,
             3
-          ]
+          ],
+          "dub": "respostas/trem.mp3"
         }
-      ]
+      ],
+      "dub": "perguntas/pergunta12.mp3"
     },
     {
       "id": 13,
@@ -267,17 +324,21 @@
       "alternativas": [
         {
           "texto": "Porco",
-          "imagem": "13/imagem_01.png"
+          "imagem": "13/imagem_01.png",
+          "dub": "respostas/porco.mp3"
         },
         {
           "texto": "Vaca",
-          "imagem": "13/imagem_02.png"
+          "imagem": "13/imagem_02.png",
+          "dub": "respostas/vaca.mp3"
         },
         {
           "texto": "Galinha",
-          "imagem": "13/imagem_03.png"
+          "imagem": "13/imagem_03.png",
+          "dub": "respostas/galinha.mp3"
         }
-      ]
+      ],
+      "dub": "perguntas/pergunta13.mp3"
     },
     {
       "id": 14,
@@ -293,7 +354,8 @@
         {
           "texto": "Coelho"
         }
-      ]
+      ],
+      "dub": "perguntas/pergunta14.mp3"
     },
     {
       "id": 15,
@@ -309,7 +371,8 @@
           "faixa": [
             0,
             3
-          ]
+          ],
+          "dub": "respostas/leao.mp3"
         },
         {
           "texto": "Macaco",
@@ -317,7 +380,8 @@
           "faixa": [
             1,
             3
-          ]
+          ],
+          "dub": "respostas/macaco.mp3"
         },
         {
           "texto": "Elefante",
@@ -325,9 +389,11 @@
           "faixa": [
             2,
             3
-          ]
+          ],
+          "dub": "respostas/elefante.mp3"
         }
-      ]
+      ],
+      "dub": "perguntas/pergunta15.mp3"
     },
     {
       "id": 16,
@@ -351,7 +417,8 @@
           "faixa": [
             0,
             3
-          ]
+          ],
+          "dub": "respostas/sofa.mp3"
         },
         {
           "texto": "Bicicleta",
@@ -359,7 +426,8 @@
           "faixa": [
             1,
             3
-          ]
+          ],
+          "dub": "respostas/bicicleta.mp3"
         },
         {
           "texto": "Televisão",
@@ -367,9 +435,11 @@
           "faixa": [
             2,
             3
-          ]
+          ],
+          "dub": "respostas/televisao.mp3"
         }
-      ]
+      ],
+      "dub": "perguntas/pergunta16.mp3"
     },
     {
       "id": 17,
@@ -385,17 +455,21 @@
       "alternativas": [
         {
           "texto": "3",
-          "imagem": "17/imagem_05.png"
+          "imagem": "17/imagem_05.png",
+          "dub": "respostas/numero3.mp3"
         },
         {
           "texto": "4",
-          "imagem": "17/imagem_06.png"
+          "imagem": "17/imagem_06.png",
+          "dub": "respostas/numero4.mp3"
         },
         {
           "texto": "5",
-          "imagem": "17/imagem_07.png"
+          "imagem": "17/imagem_07.png",
+          "dub": "respostas/numero5.mp3"
         }
-      ]
+      ],
+      "dub": "perguntas/pergunta17.mp3"
     },
     {
       "id": 18,
@@ -410,17 +484,21 @@
       "alternativas": [
         {
           "texto": "1",
-          "imagem": "18/imagem_04.png"
+          "imagem": "18/imagem_04.png",
+          "dub": "respostas/numero1.mp3"
         },
         {
           "texto": "2",
-          "imagem": "18/imagem_05.png"
+          "imagem": "18/imagem_05.png",
+          "dub": "respostas/numero2.mp3"
         },
         {
           "texto": "3",
-          "imagem": "18/imagem_06.png"
+          "imagem": "18/imagem_06.png",
+          "dub": "respostas/numero3.mp3"
         }
-      ]
+      ],
+      "dub": "perguntas/pergunta18.mp3"
     },
     {
       "id": 19,
@@ -428,20 +506,22 @@
       "correta": "Borboleta vermelha",
       "alternativas": [
         {
-          "texto": "Borboleta azul",
+          "texto": "Borboleta azul 1",
           "imagem": "19/imagem_01.png",
           "faixa": [
             0,
             3
-          ]
+          ],
+          "dub": "respostas/borboleta1.mp3"
         },
         {
-          "texto": "Borboleta azul",
+          "texto": "Borboleta azul 2",
           "imagem": "19/imagem_01.png",
           "faixa": [
             1,
             3
-          ]
+          ],
+          "dub": "respostas/borboleta2.mp3"
         },
         {
           "texto": "Borboleta vermelha",
@@ -449,9 +529,11 @@
           "faixa": [
             2,
             3
-          ]
+          ],
+          "dub": "respostas/borboleta3.mp3"
         }
-      ]
+      ],
+      "dub": "perguntas/pergunta19.mp3"
     },
     {
       "id": 20,
@@ -464,7 +546,8 @@
           "faixa": [
             0,
             3
-          ]
+          ],
+          "dub": "respostas/pizza.mp3"
         },
         {
           "texto": "Sorvete",
@@ -472,7 +555,8 @@
           "faixa": [
             1,
             3
-          ]
+          ],
+          "dub": "respostas/sorvete.mp3"
         },
         {
           "texto": "Limão",
@@ -480,9 +564,11 @@
           "faixa": [
             2,
             3
-          ]
+          ],
+          "dub": "respostas/limao.mp3"
         }
-      ]
+      ],
+      "dub": "perguntas/pergunta20.mp3"
     }
   ],
   "dificil": [
@@ -497,7 +583,8 @@
           "faixa": [
             0,
             3
-          ]
+          ],
+          "dub": "respostas/maca.mp3"
         },
         {
           "texto": "Banana",
@@ -505,7 +592,8 @@
           "faixa": [
             1,
             3
-          ]
+          ],
+          "dub": "respostas/banana.mp3"
         },
         {
           "texto": "Mamão",
@@ -513,9 +601,11 @@
           "faixa": [
             2,
             3
-          ]
+          ],
+          "dub": "respostas/mamao.mp3"
         }
-      ]
+      ],
+      "dub": "perguntas/pergunta21.mp3"
     },
     {
       "id": 22,
@@ -524,17 +614,21 @@
       "alternativas": [
         {
           "texto": "2",
-          "imagem": "22/imagem_01.png"
+          "imagem": "22/imagem_01.png",
+          "dub": "respostas/numero2.mp3"
         },
         {
           "texto": "3",
-          "imagem": "22/imagem_02.png"
+          "imagem": "22/imagem_02.png",
+          "dub": "respostas/numero3.mp3"
         },
         {
           "texto": "4",
-          "imagem": "22/imagem_03.png"
+          "imagem": "22/imagem_03.png",
+          "dub": "respostas/numero4.mp3"
         }
-      ]
+      ],
+      "dub": "perguntas/pergunta22.mp3"
     },
     {
       "id": 23,
@@ -547,7 +641,8 @@
           "faixa": [
             0,
             3
-          ]
+          ],
+          "dub": "respostas/elefante.mp3"
         },
         {
           "texto": "Cachorro",
@@ -555,7 +650,8 @@
           "faixa": [
             1,
             3
-          ]
+          ],
+          "dub": "respostas/cachorro.mp3"
         },
         {
           "texto": "Leão",
@@ -563,9 +659,11 @@
           "faixa": [
             2,
             3
-          ]
+          ],
+          "dub": "respostas/leao.mp3"
         }
-      ]
+      ],
+      "dub": "perguntas/pergunta23.mp3"
     },
     {
       "id": 24,
@@ -591,7 +689,8 @@
             0.6,
             0.24,
             0.38
-          ]
+          ],
+          "dub": "respostas/cachorro.mp3"
         },
         {
           "texto": "Cavalo",
@@ -601,7 +700,8 @@
             0.6,
             0.24,
             0.38
-          ]
+          ],
+          "dub": "respostas/cavalo.mp3"
         },
         {
           "texto": "Gato",
@@ -611,9 +711,11 @@
             0.6,
             0.24,
             0.38
-          ]
+          ],
+          "dub": "respostas/gato.mp3"
         }
-      ]
+      ],
+      "dub": "perguntas/pergunta24.mp3"
     },
     {
       "id": 25,
@@ -655,7 +757,8 @@
             3
           ]
         }
-      ]
+      ],
+      "dub": "perguntas/pergunta25.mp3"
     },
     {
       "id": 26,
@@ -674,15 +777,19 @@
       "correta": "O urso",
       "alternativas": [
         {
-          "texto": "O urso"
+          "texto": "O urso",
+          "dub": "respostas/urso.mp3"
         },
         {
-          "texto": "O elefante"
+          "texto": "O elefante",
+          "dub": "respostas/elefante.mp3"
         },
         {
-          "texto": "O leão"
+          "texto": "O leão",
+          "dub": "respostas/leao.mp3"
         }
-      ]
+      ],
+      "dub": "perguntas/pergunta26.mp3"
     },
     {
       "id": 27,
@@ -702,17 +809,21 @@
       "alternativas": [
         {
           "texto": "7",
-          "imagem": "27/imagem_06.png"
+          "imagem": "27/imagem_06.png",
+          "dub": "respostas/numero7.mp3"
         },
         {
           "texto": "8",
-          "imagem": "27/imagem_07.png"
+          "imagem": "27/imagem_07.png",
+          "dub": "respostas/numero8.mp3"
         },
         {
           "texto": "9",
-          "imagem": "27/imagem_08.png"
+          "imagem": "27/imagem_08.png",
+          "dub": "respostas/numero9.mp3"
         }
-      ]
+      ],
+      "dub": "perguntas/pergunta27.mp3"
     },
     {
       "id": 28,
@@ -724,17 +835,21 @@
       "alternativas": [
         {
           "texto": "4",
-          "imagem": "28/imagem_02.png"
+          "imagem": "28/imagem_02.png",
+          "dub": "respostas/numero4.mp3"
         },
         {
           "texto": "6",
-          "imagem": "28/imagem_03.png"
+          "imagem": "28/imagem_03.png",
+          "dub": "respostas/numero6.mp3"
         },
         {
           "texto": "8",
-          "imagem": "28/imagem_04.png"
+          "imagem": "28/imagem_04.png",
+          "dub": "respostas/numero8.mp3"
         }
-      ]
+      ],
+      "dub": "perguntas/pergunta28.mp3"
     },
     {
       "id": 29,
@@ -743,17 +858,21 @@
       "alternativas": [
         {
           "texto": "Cachorro",
-          "imagem": "29/imagem_01.png"
+          "imagem": "29/imagem_01.png",
+          "dub": "respostas/cachorro.mp3"
         },
         {
           "texto": "Peixe",
-          "imagem": "29/imagem_02.png"
+          "imagem": "29/imagem_02.png",
+          "dub": "respostas/peixe.mp3"
         },
         {
           "texto": "Passarinho",
-          "imagem": "29/imagem_03.png"
+          "imagem": "29/imagem_03.png",
+          "dub": "respostas/passarinho.mp3"
         }
-      ]
+      ],
+      "dub": "perguntas/pergunta29.mp3"
     },
     {
       "id": 30,
@@ -766,7 +885,8 @@
         {
           "texto": "Árvore"
         }
-      ]
+      ],
+      "dub": "perguntas/pergunta30.mp3"
     }
   ]
 }

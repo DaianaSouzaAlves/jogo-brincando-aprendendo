@@ -11,7 +11,8 @@ let perguntasNivel = []; // perguntas do nível atual, já embaralhadas
 let nivelAtual = null;
 let questoesAcertadas = 0;
 
-fetch('assets/js/perguntas.json')
+// o botão de iniciar espera esta Promise: sem as perguntas carregadas não há o que montar
+const perguntasProntas = fetch('assets/js/perguntas.json')
     .then(response => response.json())
     .then(data => {
         perguntasPorNivel = data;
@@ -73,6 +74,9 @@ function resolverImagem(item) {
 const NIVEIS = ['facil', 'medio', 'dificil'];
 const TEMPO_FEEDBACK = 1300; // ms que o acerto/erro fica na tela antes da próxima pergunta
 const TEMPO_INTRO_NIVEL = 2000; // ms que o PNG do nível fica na tela
+const TEMPO_ANIMACAO_INTRO = 200 + TEMPO_INTRO_NIVEL + 400; // entrada + tela + saída do PNG do nível
+
+let timerFalaPergunta = null;
 
 /** Sorteia a ordem das perguntas, mostra o PNG do nível por um instante e começa. */
 function iniciarNivel(nivel) {
@@ -82,7 +86,7 @@ function iniciarNivel(nivel) {
         (perguntasPorNivel[nivel] || []).filter(p => p.ativa !== false)
     );
     trocaParte(4);
-    montarPergunta(0);
+    montarPergunta(0, TEMPO_ANIMACAO_INTRO); // o enunciado só é falado depois da animação do nível
 
     const $intro = $('.parte-4 .intro-nivel');
     $intro.find('img').attr('src', `assets/img/nivel/nivel_${nivel}.png`);
@@ -102,16 +106,32 @@ function proximaPergunta(i, acertou) {
     }
 }
 
-function montarPergunta(i) {
+/** Fala o enunciado; se o navegador bloquear o som, tenta de novo no próximo toque na tela. */
+function falarPergunta(dub) {
+    playSound(dub, .5, 'p', null, e => {
+        if (e.name === 'NotAllowedError') { // AbortError é só um som interrompido por outro
+            $(document).one('pointerdown', () => playSound(dub, .5, 'p'));
+        }
+    });
+}
+
+/** Monta a pergunta e fala o enunciado (depois de `atrasoFala` ms, se houver áudio). */
+function montarPergunta(i, atrasoFala = 0) {
     const objPergunta = perguntasNivel[i];
 
     const $pergunta = $('.parte-4 .pergunta');
     $pergunta.html(montarHtmlColorido(objPergunta.pergunta));
     if (objPergunta.dub) {
         $pergunta.append(
-            $('<a href="javascript:void(0);" class="btn-volume"><i class="fa fa-volume-up"></i></a>')
-                .on('click', () => playSound(objPergunta.dub, .5, 'p'))
+            $('<button>', {type: 'button', class: 'btn btn-volume'})
+                .append('<i class="fa fa-volume-up"></i>')
+                .on('click', () => playSound(objPergunta.dub, .5, 'p')) // ouvir de novo, igual às alternativas
         );
+    }
+
+    clearTimeout(timerFalaPergunta);
+    if (objPergunta.dub) {
+        timerFalaPergunta = setTimeout(() => falarPergunta(objPergunta.dub), atrasoFala);
     }
 
     $('.parte-4 .personagem').attr('src', PERSONAGENS[i % PERSONAGENS.length]);
@@ -165,9 +185,11 @@ function responder($escolhido, objPergunta, i) {
 
 /** Card de uma alternativa: com imagem, ou só com o texto se não houver imagem. */
 function montarAlternativa(item, index, objPergunta, i) {
-    const $card = $('<a>', {
-        class: `card card-alternativa card-alternativa-${(index % 3) + 1} d-flex flex-column justify-content-center align-items-center text-decoration-none`,
-        href: 'javascript:void(0);'
+    // div com role="button" (e não <a>): o botão de som dentro dela seria um controle dentro de outro
+    const $card = $('<div>', {
+        class: `card card-alternativa card-alternativa-${(index % 3) + 1} d-flex flex-column justify-content-center align-items-center`,
+        role: 'button',
+        tabindex: 0
     });
 
     if (item.dub) {
@@ -198,6 +220,12 @@ function montarAlternativa(item, index, objPergunta, i) {
     $card.data('texto', item.texto);
     $card
         .on('click', () => responder($card, objPergunta, i))
+        .on('keydown', e => {
+            if ((e.key === 'Enter' || e.key === ' ') && e.target === $card[0]) {
+                e.preventDefault();
+                responder($card, objPergunta, i);
+            }
+        })
         .on('mousedown', () => playSound('click.mp3', .5));
 
     return $card;

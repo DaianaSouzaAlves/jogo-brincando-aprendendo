@@ -55,8 +55,19 @@
     filter: drop-shadow(0 6px 8px rgba(0, 0, 0, .3));
 }
 
+/* enunciado centralizado; o som acompanha o fim do texto, na mesma linha, à direita */
 .parte-4 .pergunta {
-    position: relative; /* referência do botão de som */
+    text-align: center;
+}
+
+.parte-4 .pergunta .colorido {
+    display: inline;
+}
+
+.parte-4 .pergunta .btn-volume {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: .75rem;
 }
 
 /* personagem (menino/menina) em pé na base da tela, à direita */
@@ -203,6 +214,7 @@
 }
 
 .peca-item {
+    touch-action: none; /* arrastar no toque não rola a página */
     background: #fff;
     border: 5px solid #007bff;
 }

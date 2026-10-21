@@ -131,20 +131,33 @@ body[data-parte="1"] {
 
 /* ---------- Botão de som (aparece só quando a pergunta/alternativa tem "dub") ---------- */
 .btn-volume {
-    position: absolute !important;
-    top: 10px;
-    left: 10px;
+    flex: none;
     padding: 0;
     border: none !important;
     box-shadow: none !important;
     color: white;
-    font-size: clamp(18px, 3vw, 42px);
+    font-size: clamp(14px, 2.3vw, 32px);
+    line-height: 1;
     text-shadow: 1px 1px 1px black !important;
-    transition: transform .08s ease-in-out;
+    transition: scale .08s ease-in-out;
+}
+
+/* dentro da alternativa: no canto do card, com tamanho proporcional a ele */
+.card-alternativa {
+    container-type: inline-size;
+    cursor: pointer;
+}
+
+.card-alternativa .btn-volume {
+    position: absolute !important;
+    top: 4cqw;
+    left: 4cqw;
+    z-index: 2;
+    font-size: 13cqw;
 }
 
 .btn-volume:hover {
-    transform: scale(1.3);
+    scale: 1.3;
 }
 
 /* ---------- Cards de alternativa (verde, azul e rosa) ---------- */
