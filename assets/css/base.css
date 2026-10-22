@@ -216,7 +216,7 @@ body[data-parte="1"] {
 
 .card-img-wrapper img {
     display: block;
-    max-width: 100%;
+    max-width: 73%;
     max-height: 100%;
     object-fit: contain;
 }

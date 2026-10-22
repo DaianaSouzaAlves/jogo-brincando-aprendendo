@@ -255,28 +255,16 @@
         {
           "texto": "Rato",
           "imagem": "11/imagem_01.png",
-          "faixa": [
-            0,
-            3
-          ],
           "dub": "respostas/rato.mp3"
         },
         {
           "texto": "Cachorro",
           "imagem": "11/imagem_02.png",
-          "faixa": [
-            1,
-            3
-          ],
           "dub": "respostas/cachorro.mp3"
         },
         {
           "texto": "Sapo",
           "imagem": "11/imagem_03.png",
-          "faixa": [
-            2,
-            3
-          ],
           "dub": "respostas/sapo.mp3"
         }
       ],
@@ -290,28 +278,16 @@
         {
           "texto": "Carrinho",
           "imagem": "12/imagem_01.png",
-          "faixa": [
-            0,
-            3
-          ],
           "dub": "respostas/carrinho.mp3"
         },
         {
           "texto": "Boneca",
           "imagem": "12/imagem_02.png",
-          "faixa": [
-            1,
-            3
-          ],
           "dub": "respostas/boneca.mp3"
         },
         {
           "texto": "Trem de brinquedo",
           "imagem": "12/imagem_03.png",
-          "faixa": [
-            2,
-            3
-          ],
           "dub": "respostas/trem.mp3"
         }
       ],
@@ -368,28 +344,16 @@
         {
           "texto": "Leão",
           "imagem": "15/imagem_02.png",
-          "faixa": [
-            0,
-            3
-          ],
           "dub": "respostas/leao.mp3"
         },
         {
           "texto": "Macaco",
           "imagem": "15/imagem_03.png",
-          "faixa": [
-            1,
-            3
-          ],
           "dub": "respostas/macaco.mp3"
         },
         {
           "texto": "Elefante",
           "imagem": "15/imagem_04.png",
-          "faixa": [
-            2,
-            3
-          ],
           "dub": "respostas/elefante.mp3"
         }
       ],
@@ -414,28 +378,16 @@
         {
           "texto": "Sofá",
           "imagem": "16/imagem_02.png",
-          "faixa": [
-            0,
-            3
-          ],
           "dub": "respostas/sofa.mp3"
         },
         {
           "texto": "Bicicleta",
           "imagem": "16/imagem_03.png",
-          "faixa": [
-            1,
-            3
-          ],
           "dub": "respostas/bicicleta.mp3"
         },
         {
           "texto": "Televisão",
           "imagem": "16/imagem_04.png",
-          "faixa": [
-            2,
-            3
-          ],
           "dub": "respostas/televisao.mp3"
         }
       ],
@@ -508,28 +460,16 @@
         {
           "texto": "Borboleta azul 1",
           "imagem": "19/imagem_01.png",
-          "faixa": [
-            0,
-            3
-          ],
           "dub": "respostas/borboleta1.mp3"
         },
         {
           "texto": "Borboleta azul 2",
           "imagem": "19/imagem_02.png",
-          "faixa": [
-            1,
-            3
-          ],
           "dub": "respostas/borboleta2.mp3"
         },
         {
           "texto": "Borboleta vermelha",
           "imagem": "19/imagem_03.png",
-          "faixa": [
-            2,
-            3
-          ],
           "dub": "respostas/borboleta3.mp3"
         }
       ],
@@ -543,28 +483,16 @@
         {
           "texto": "Pizza",
           "imagem": "20/imagem_01.png",
-          "faixa": [
-            0,
-            3
-          ],
           "dub": "respostas/pizza.mp3"
         },
         {
           "texto": "Sorvete",
           "imagem": "20/imagem_02.png",
-          "faixa": [
-            1,
-            3
-          ],
           "dub": "respostas/sorvete.mp3"
         },
         {
           "texto": "Limão",
           "imagem": "20/imagem_03.png",
-          "faixa": [
-            2,
-            3
-          ],
           "dub": "respostas/limao.mp3"
         }
       ],
@@ -580,28 +508,16 @@
         {
           "texto": "Maçã",
           "imagem": "21/imagem_01.png",
-          "faixa": [
-            0,
-            3
-          ],
           "dub": "respostas/maca.mp3"
         },
         {
           "texto": "Banana",
           "imagem": "21/imagem_02.png",
-          "faixa": [
-            1,
-            3
-          ],
           "dub": "respostas/banana.mp3"
         },
         {
           "texto": "Mamão",
           "imagem": "21/imagem_03.png",
-          "faixa": [
-            2,
-            3
-          ],
           "dub": "respostas/mamao.mp3"
         }
       ],
@@ -638,28 +554,16 @@
         {
           "texto": "Elefante",
           "imagem": "23/imagem_01.png",
-          "faixa": [
-            0,
-            3
-          ],
           "dub": "respostas/elefante.mp3"
         },
         {
           "texto": "Cachorro",
           "imagem": "23/imagem_02.png",
-          "faixa": [
-            1,
-            3
-          ],
           "dub": "respostas/cachorro.mp3"
         },
         {
           "texto": "Leão",
           "imagem": "23/imagem_03.png",
-          "faixa": [
-            2,
-            3
-          ],
           "dub": "respostas/leao.mp3"
         }
       ],
@@ -670,13 +574,7 @@
       "pergunta": "Qual animal está mais longe da casa?",
       "cena": [
         {
-          "imagem": "24/imagem_01.png",
-          "recorte": [
-            0,
-            0.12,
-            1,
-            0.46
-          ]
+          "imagem": "24/imagem_01.png"
         }
       ],
       "correta": "Cavalo",
@@ -684,34 +582,16 @@
         {
           "texto": "Cachorro",
           "imagem": "24/imagem_02.png",
-          "recorte": [
-            0.075,
-            0.6,
-            0.24,
-            0.38
-          ],
           "dub": "respostas/cachorro.mp3"
         },
         {
           "texto": "Cavalo",
           "imagem": "24/imagem_03.png",
-          "recorte": [
-            0.385,
-            0.6,
-            0.24,
-            0.38
-          ],
           "dub": "respostas/cavalo.mp3"
         },
         {
           "texto": "Gato",
           "imagem": "24/imagem_04.png",
-          "recorte": [
-            0.69,
-            0.6,
-            0.24,
-            0.38
-          ],
           "dub": "respostas/gato.mp3"
         }
       ],
@@ -735,27 +615,15 @@
       "alternativas": [
         {
           "texto": "Vaso cinza",
-          "imagem": "25/imagem_04.png",
-          "faixa": [
-            0,
-            3
-          ]
+          "imagem": "25/imagem_04.png"
         },
         {
           "texto": "Vaso marrom",
-          "imagem": "25/imagem_02.png",
-          "faixa": [
-            1,
-            3
-          ]
+          "imagem": "25/imagem_02.png"
         },
         {
           "texto": "Vaso vermelho",
-          "imagem": "25/imagem_03.png",
-          "faixa": [
-            2,
-            3
-          ]
+          "imagem": "25/imagem_03.png"
         }
       ],
       "dub": "perguntas/pergunta25.mp3"
@@ -880,10 +748,14 @@
       "pergunta": "Encontre a sombra de cada árvore.",
       "pares": [
         {
-          "texto": "Macieira"
+          "texto": "Macieira",
+          "imagem": "30/imagem_01.png",
+          "sombra": "30/imagem_02.png"
         },
         {
-          "texto": "Árvore"
+          "texto": "Árvore",
+          "imagem": "30/imagem_03.png",
+          "sombra": "30/imagem_04.png"
         }
       ],
       "dub": "perguntas/pergunta30.mp3"
