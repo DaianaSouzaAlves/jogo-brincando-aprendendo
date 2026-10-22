@@ -246,21 +246,71 @@
 
 
 /* ======================= TELA 5: RESULTADO ======================= */
-/* caixa onde ficava o resultado: as estrelas ocupam quase toda ela */
-.parte-5 .card-imagem.estrelas {
-    flex-direction: row;
+/* painel translúcido: personagem à esquerda, acertos, estrelas e botões à direita */
+.parte-5 .painel-resultado {
+    display: flex;
     align-items: center;
-    justify-content: space-around;
-    width: min(75vw, 800px);
-    height: 32vh;
-    padding: 2vh 2vw;
+    justify-content: center;
+    gap: 3vw;
+    width: min(80vw, 900px);
+    padding: 3vh 3vw;
+    border-radius: 28px;
+    border: 3px solid rgba(255, 255, 255, .7);
+    background: rgba(255, 255, 255, .45);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .2);
+}
+
+.parte-5 .resultado-personagem {
+    height: min(48vh, 360px);
+    max-width: 40%;
+    object-fit: contain;
+}
+
+.parte-5 .resultado-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3vh;
+}
+
+.parte-5 .resultado-acertos {
+    display: flex;
+    align-items: baseline;
+    gap: .6rem;
+    padding: .5rem 1.5rem;
+    border-radius: 18px;
+    border: 3px solid #bfe3f5;
+    background: rgba(255, 255, 255, .7);
+    color: #1f6fb2;
+    font-weight: 900;
+}
+
+.parte-5 .numero-acertos {
+    font-size: clamp(2rem, 7vh, 4rem);
+}
+
+.parte-5 .texto-acertos {
+    font-size: clamp(1rem, 3.5vh, 2rem);
+}
+
+.parte-5 .estrelas {
+    display: flex;
+    justify-content: center;
+    gap: 1vw;
+    height: clamp(60px, 14vh, 110px);
+}
+
+.parte-5 .resultado-botoes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vw;
 }
 
 .parte-5 .estrela {
-    flex: 1 1 0;
-    min-width: 0;
-    max-width: 32%;
-    max-height: 100%;
+    height: 100%;
     object-fit: contain;
     filter: drop-shadow(0 4px 6px rgba(0, 0, 0, .3));
 }
