@@ -59,21 +59,25 @@
 
         <!-- PARTE 5: resultado -->
         <div class="col-12 parte parte-5" style="display: none;">
-            <div class="d-flex flex-column h-100 px-5 justify-content-center">
-                <div class="col-12 d-flex justify-content-center">
-                    <div class="card card-imagem estrelas">
-                        <img src="assets/img/nivel/estrela.png" alt="" class="estrela">
-                        <img src="assets/img/nivel/estrela.png" alt="" class="estrela">
-                        <img src="assets/img/nivel/estrela.png" alt="" class="estrela">
+            <div class="d-flex h-100 align-items-center justify-content-center">
+                <div class="painel-resultado">
+                    <img class="resultado-personagem" src="assets/img/resultado_bom.png" alt="">
+                    <div class="resultado-info">
+                        <div class="resultado-acertos"><span class="numero-acertos">0</span> <span class="texto-acertos">ACERTOS!</span></div>
+                        <div class="estrelas">
+                            <img src="assets/img/nivel/estrela.png" alt="" class="estrela">
+                            <img src="assets/img/nivel/estrela.png" alt="" class="estrela">
+                            <img src="assets/img/nivel/estrela.png" alt="" class="estrela">
+                        </div>
+                        <div class="resultado-botoes">
+                            <button class="btn btn-success botao-repetir">
+                                JOGAR NOVAMENTE
+                            </button>
+                            <a href="javascript:void(0);" class="botao-proximo" style="display: none;" aria-label="Próximo nível">
+                                <img src="assets/img/nivel/proximoNivel.png" alt="Próximo nível">
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="col-12 mt-4 d-flex justify-content-center align-items-center gap-4">
-                    <button class="btn btn-success botao-repetir">
-                        JOGAR NOVAMENTE
-                    </button>
-                    <a href="javascript:void(0);" class="botao-proximo" style="display: none;" aria-label="Próximo nível">
-                        <img src="assets/img/nivel/proximoNivel.png" alt="Próximo nível">
-                    </a>
                 </div>
             </div>
         </div>

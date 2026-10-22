@@ -12,6 +12,10 @@ function mostrarResultado(acertos, total) {
     const estrelas = calcularEstrelas(acertos, total);
     const temProximo = estrelas > 1 && NIVEIS.indexOf(nivelAtual) < NIVEIS.length - 1;
 
+    $tela.find('.numero-acertos').text(acertos);
+    $tela.find('.texto-acertos').text(acertos === 1 ? 'ACERTO!' : 'ACERTOS!');
+    // personagem conforme o desempenho: 1 estrela = melhore, 2 = médio, 3 = bom
+    $tela.find('.resultado-personagem').attr('src', `assets/img/${['resultado_melhore', 'resultado_medio', 'resultado_bom'][estrelas - 1]}.png`);
     $tela.find('.estrela').each((i, el) => $(el).toggleClass('apagada', i >= estrelas));
 
     // 1 estrela: só jogar novamente. 2 ou 3: o próximo nível vira botão (no último nível, só repetir)
