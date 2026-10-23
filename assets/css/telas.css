@@ -92,7 +92,12 @@
 }
 
 .parte-4 .cena-img:only-child {
-    height: min(25vh, 14vw);
+    height: min(30vh, 17vw);
+}
+
+/* com imagem no enunciado, os cards de resposta diminuem um pouco para dar espaço */
+.parte-4 .card.com-cena .card-alternativa {
+    height: clamp(90px, min(26vh, 14.5vw), 290px);
 }
 
 .parte-4 .sinal-cena {
@@ -329,4 +334,151 @@
 
 .parte-5 .botao-proximo:hover img {
     transform: scale(1.08);
+}
+
+
+/* ======================= TELA 6: FINAL (resumo dos 3 níveis) ======================= */
+/* palco 16:9; tudo é posicionado em cqw (largura do palco) para escalar junto */
+.parte-6 .palco-final {
+    position: relative;
+    container-type: inline-size;
+    width: min(94vw, 150vh);
+    aspect-ratio: 16 / 9;
+}
+
+.parte-6 .palco-final > * {
+    position: absolute;
+}
+
+.parte-6 .painel-final {
+    left: 4.5cqw;
+    right: 4.5cqw;
+    top: 10cqw;
+    bottom: 3.5cqw;
+    border-radius: 3cqw;
+    border: .25cqw solid rgba(255, 255, 255, .8);
+    background: rgba(255, 255, 255, .45);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 .6cqw 2cqw rgba(0, 0, 0, .2);
+}
+
+/* os bonecos ficam à frente dos cards, cada um numa altura e tamanho */
+.parte-6 .final-personagem {
+    z-index: 2;
+    object-fit: contain;
+    filter: drop-shadow(0 .4cqw .6cqw rgba(0, 0, 0, .3));
+}
+
+.parte-6 .final-menino {
+    left: -2cqw;
+    bottom: 3cqw;
+    height: 29cqw;
+}
+
+.parte-6 .final-menina {
+    right: -2cqw;
+    bottom: 9cqw;
+    height: 25cqw;
+}
+
+.parte-6 .final-trofeu {
+    width: 11cqw;
+    left: 44.5cqw;
+    top: -1.5cqw;
+}
+
+.parte-6 .final-titulo {
+    width: 32cqw;
+    left: 34cqw;
+    top: 5.5cqw;
+}
+
+.parte-6 .final-cards {
+    left: 0;
+    right: 0;
+    top: 21.5cqw;
+    display: flex;
+    justify-content: center;
+    gap: 1cqw;
+}
+
+.parte-6 .resumo-card {
+    position: relative;
+    container-type: inline-size;
+    width: 20.5cqw;
+}
+
+.parte-6 .resumo-card > img {
+    display: block;
+    width: 100%;
+}
+
+/* a nota e as estrelas ficam dentro da área branca do card */
+.parte-6 .resumo-nota {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 31%;
+    height: 28%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2cqw;
+    font-size: 20cqw;
+    line-height: 1;
+    font-weight: 700;
+}
+
+.parte-6 .resumo-nota b {
+    font-size: 1.15em;
+}
+
+.parte-6 .resumo-nota span {
+    color: #1b2f7a;
+    font-size: .75em;
+}
+
+.parte-6 .resumo-card[data-nivel="facil"] .acertos { color: #3fae29; }
+.parte-6 .resumo-card[data-nivel="medio"] .acertos { color: #f7931e; }
+.parte-6 .resumo-card[data-nivel="dificil"] .acertos { color: #ef2f2f; }
+
+.parte-6 .resumo-estrelas {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 61%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1cqw;
+}
+
+.parte-6 .estrela {
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, .3));
+}
+
+.parte-6 .estrela.apagada {
+    filter: grayscale(1) brightness(1.3);
+    opacity: .4;
+}
+
+.parte-6 .final-botoes {
+    left: 0;
+    right: 0;
+    top: 43.5cqw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3cqw;
+}
+
+.parte-6 .final-botoes .btn {
+    font-size: 2.4cqw;
+    padding: .6cqw 3cqw;
+    border-radius: 1.4cqw;
+    border-width: .3cqw;
+    white-space: nowrap;
 }

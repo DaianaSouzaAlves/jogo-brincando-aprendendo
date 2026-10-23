@@ -1,5 +1,8 @@
 /** TELA 5: resultado - 3 estrelas pelo aproveitamento; 2+ libera o próximo nível **/
 
+/** Último resultado de cada nível ({acertos, total, estrelas}), usado no resumo final. */
+const resultadosNiveis = {};
+
 /** Até 33% de acerto: 1 estrela; até 66%: 2; acima disso: 3. */
 function calcularEstrelas(acertos, total) {
     const aproveitamento = total ? acertos / total : 0;
@@ -10,7 +13,18 @@ function calcularEstrelas(acertos, total) {
 function mostrarResultado(acertos, total) {
     const $tela = $('.parte-5');
     const estrelas = calcularEstrelas(acertos, total);
-    const temProximo = estrelas > 1 && NIVEIS.indexOf(nivelAtual) < NIVEIS.length - 1;
+    const ultimoNivel = NIVEIS.indexOf(nivelAtual) === NIVEIS.length - 1;
+    const temProximo = estrelas > 1 && !ultimoNivel;
+
+    resultadosNiveis[nivelAtual] = {acertos, total, estrelas};
+    clearTimeout(timerFalaPergunta);
+    pararSom('p'); // a fala da última pergunta não continua na tela de resultado
+
+    // passou do último nível: em vez do resultado do nível, mostra o resumo dos três
+    if (ultimoNivel && estrelas > 1) {
+        mostrarResumoFinal();
+        return;
+    }
 
     $tela.find('.numero-acertos').text(acertos);
     $tela.find('.texto-acertos').text(acertos === 1 ? 'ACERTO!' : 'ACERTOS!');
@@ -21,10 +35,24 @@ function mostrarResultado(acertos, total) {
     // 1 estrela: só jogar novamente. 2 ou 3: o próximo nível vira botão (no último nível, só repetir)
     $tela.find('.botao-proximo').toggle(temProximo);
     $tela.find('.botao-repetir').toggle(!temProximo);
-    clearTimeout(timerFalaPergunta);
-    pararSom('p'); // a fala da última pergunta não continua na tela de resultado
     trocaParte(5);
 }
+
+/** TELA 6: acertos e estrelas de cada nível, depois de terminar o último. */
+function mostrarResumoFinal() {
+    NIVEIS.forEach(nivel => {
+        const {acertos, total, estrelas} = resultadosNiveis[nivel];
+        const $card = $(`.parte-6 .resumo-card[data-nivel="${nivel}"]`);
+        $card.find('.acertos').text(acertos);
+        $card.find('.resumo-nota span').text(`/${total}`);
+        $card.find('.estrela').each((i, el) => $(el).toggleClass('apagada', i >= estrelas));
+    });
+    trocaParte(6);
+}
+
+$('.parte-6 .botao-jogar-novamente')
+    .on('click', () => iniciarNivel(NIVEIS[0]))
+    .on('mousedown', () => playSound('click.mp3', .5));
 
 $('.parte-5 .botao-repetir')
     .on('click', () => iniciarNivel(nivelAtual))

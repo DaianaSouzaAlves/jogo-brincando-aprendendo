@@ -142,6 +142,7 @@ function montarPergunta(i, atrasoFala = 0) {
     }
 
     montarCena(objPergunta.cena);
+    $('.parte-4 .card').toggleClass('com-cena', !!(objPergunta.cena && objPergunta.cena.length));
     const $alternativas = $('.parte-4 .alternativas').removeClass('respondida').empty();
     embaralharArray([...objPergunta.alternativas]).forEach((item, index) => {
         $alternativas.append(montarAlternativa(item, index, objPergunta, i));

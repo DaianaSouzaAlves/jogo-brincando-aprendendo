@@ -322,13 +322,19 @@
       "pergunta": "Arraste cada animal para sua sombra.",
       "pares": [
         {
-          "texto": "Gato"
+          "texto": "Gato",
+          "imagem": "14/imagem_01.png",
+          "sombra": "14/imagem_04.png"
         },
         {
-          "texto": "Cachorro"
+          "texto": "Cachorro",
+          "imagem": "14/imagem_03.png",
+          "sombra": "14/imagem_06.png"
         },
         {
-          "texto": "Coelho"
+          "texto": "Coelho",
+          "imagem": "14/imagem_02.png",
+          "sombra": "14/imagem_05.png"
         }
       ],
       "dub": "perguntas/pergunta14.mp3"
@@ -362,17 +368,7 @@
     {
       "id": 16,
       "pergunta": "O que está do lado de fora da casa?",
-      "cena": [
-        {
-          "imagem": "16/imagem_01.png",
-          "recorte": [
-            0.18,
-            0.19,
-            0.64,
-            0.6
-          ]
-        }
-      ],
+      "cena": ["16/imagem_01.png"],
       "correta": "Bicicleta",
       "alternativas": [
         {
@@ -455,7 +451,7 @@
     {
       "id": 19,
       "pergunta": "Qual borboleta é diferente das outras?",
-      "correta": "Borboleta vermelha",
+      "correta": "Borboleta azul 3",
       "alternativas": [
         {
           "texto": "Borboleta azul 1",
@@ -468,7 +464,7 @@
           "dub": "respostas/borboleta2.mp3"
         },
         {
-          "texto": "Borboleta vermelha",
+          "texto": "Borboleta azul 3",
           "imagem": "19/imagem_03.png",
           "dub": "respostas/borboleta3.mp3"
         }
@@ -572,17 +568,7 @@
     {
       "id": 24,
       "pergunta": "Qual animal está mais longe da casa?",
-      "cena": [
-        {
-          "imagem": "24/imagem_01.png",
-          "recorte": [
-            0.12,
-            0.22,
-            0.76,
-            0.60
-          ]
-        }
-      ],
+      "cena": ["24/imagem_01.jpg"],
       "correta": "Cavalo",
       "alternativas": [
         {
@@ -606,17 +592,7 @@
     {
       "id": 25,
       "pergunta": "O que está em cima da prateleira?",
-      "cena": [
-        {
-          "imagem": "25/imagem_01.png",
-          "recorte": [
-            0,
-            0.09,
-            1,
-            0.47
-          ]
-        }
-      ],
+      "cena": ["25/imagem_01.jpg"],
       "correta": "Vaso vermelho",
       "alternativas": [
         {
@@ -637,29 +613,22 @@
     {
       "id": 26,
       "pergunta": "Qual animal está ENTRE o leão e a girafa?",
-      "cena": [
-        {
-          "imagem": "26/imagem_01.png",
-          "recorte": [
-            0.12,
-            0.22,
-            0.76,
-            0.60
-          ]
-        }
-      ],
+      "cena": ["26/imagem_01.png"],
       "correta": "Urso",
       "alternativas": [
         {
           "texto": "Urso",
+          "imagem": "26/imagem_02.png",
           "dub": "respostas/urso.mp3"
         },
         {
           "texto": "Elefante",
+          "imagem": "26/imagem_03.png",
           "dub": "respostas/elefante.mp3"
         },
         {
           "texto": "Leão",
+          "imagem": "26/imagem_04.png",
           "dub": "respostas/leao.mp3"
         }
       ],
