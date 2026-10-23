@@ -19,6 +19,11 @@
     text-transform: uppercase !important;
 }
 
+/* o display dos .btn (Bootstrap) ganha do hidden do navegador; esta regra devolve o hidden */
+[hidden] {
+    display: none !important;
+}
+
 html,
 body {
     overflow: hidden;

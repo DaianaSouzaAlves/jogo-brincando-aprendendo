@@ -7,10 +7,10 @@ A criança responde perguntas em três níveis (fácil, médio e difícil), ganh
 
 1. Toque no botão de play para começar pelo nível fácil.
 2. Responda às perguntas. Elas podem ter imagens e áudio.
-3. No fim de cada nível aparecem os acertos e de 1 a 3 estrelas. Com 2 ou 3 estrelas, os níveis fácil e médio liberam o próximo; com 1 estrela, eles podem ser repetidos. Ao terminar o nível difícil, o jogo segue para o resumo e o desafio final.
-4. No resumo dos três níveis, escolha **Ir para o desafio final**. Uma vinheta PNG “Desafio Final!” aparece brevemente na transição para o tabuleiro, como a apresentação dos níveis.
-5. Separe as figuras pelas regras apresentadas no tabuleiro: **C** no começo, **O** no final e **A** no nome. O cronômetro começa quando a vinheta desaparece e o tabuleiro fica disponível. Fora do Preview do projeto, se a imagem armazenada não carregar, aparece um título estilizado de reserva.
-6. Depois do desafio, o resumo mostra o tempo; é possível refazê-lo ou voltar à tela inicial.
+3. No fim de cada nível aparecem os acertos e de 1 a 3 estrelas. Com 2 ou 3 estrelas o nível libera a etapa seguinte; com 1 estrela ele pode ser repetido. No difícil, a etapa seguinte é o desafio final.
+4. Na tela de resultado do difícil, escolha **Ir para o desafio final**. Uma vinheta PNG “Desafio Final!” aparece brevemente na transição para o tabuleiro, como a apresentação dos níveis.
+5. Separe as figuras pelas regras apresentadas no tabuleiro: **C** no começo, **O** no final e **A** no nome. O cronômetro começa quando a vinheta desaparece e o tabuleiro fica disponível. A instrução de cada etapa é falada e pode ser repetida no ícone de som ao lado da letra; tocar numa figura fala o nome do animal. Fora do Preview do projeto, se a imagem armazenada não carregar, aparece um título estilizado de reserva.
+6. Depois do desafio aparece o resumo dos três níveis, com o tempo; é possível refazer o desafio ou voltar à tela inicial.
 
 ## Como rodar
 

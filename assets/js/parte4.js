@@ -91,6 +91,7 @@ function iniciarNivel(nivel) {
     const $intro = $('.parte-4 .intro-nivel');
     $intro.find('img').attr('src', `assets/img/nivel/nivel_${nivel}.png`);
     $intro.stop(true, true).fadeIn(200);
+    playSound(`nivel ${nivel}.mp3`, .5, 'p');
     setTimeout(() => $intro.fadeOut(400), TEMPO_INTRO_NIVEL);
 }
 

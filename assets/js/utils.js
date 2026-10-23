@@ -36,6 +36,14 @@ function montarHtmlColorido(frase, tag = 'h4') {
     return $titulo;
 }
 
+/** Milissegundos em mm:ss (tempo do desafio final, mostrado no resumo). */
+function formatarTempoDesafio(milisegundos) {
+    const totalSegundos = Math.floor(Math.max(0, milisegundos || 0) / 1000);
+    const minutos = Math.floor(totalSegundos / 60);
+    const segundos = totalSegundos % 60;
+    return `${String(minutos).padStart(2, '0')}:${String(segundos).padStart(2, '0')}`;
+}
+
 /* ---------------------------- Sons ---------------------------- */
 
 const audiosReproduzindo = {};
@@ -77,10 +85,10 @@ function playSound(arquivo, volume = 1, id = null, onEnd = null, onFalha = null)
     return audio;
 }
 
-/** Som de acerto ou erro; corta a fala da pergunta/alternativa que estiver tocando. */
-function tocarFeedback(acertou) {
+/** Som de acerto ou erro; corta a fala que estiver tocando e, se vier `fala`, toca ela no fim. */
+function tocarFeedback(acertou, fala = null, aoFimDaFala = null) {
     pararSom('p');
-    playSound(acertou ? 'acerto.mp3' : 'erro.mp3', .35, 'feedback');
+    playSound(acertou ? 'acerto.mp3' : 'erro.mp3', .35, 'feedback', fala ? () => playSound(fala, .5, 'p', aoFimDaFala) : null);
 }
 
 /** Interrompe o som com esse id, se estiver tocando. */

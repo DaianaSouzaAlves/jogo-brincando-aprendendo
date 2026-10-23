@@ -73,6 +73,7 @@
                             <button class="btn btn-success botao-repetir">
                                 JOGAR NOVAMENTE
                             </button>
+                            <button class="btn btn-success botao-desafio-final" style="display: none;">DESAFIO FINAL</button>
                             <a href="javascript:void(0);" class="botao-proximo" style="display: none;" aria-label="Próximo nível">
                                 <img src="assets/img/nivel/proximoNivel.png" alt="Próximo nível">
                             </a>
@@ -123,10 +124,9 @@
                     </div>
 
                     <div class="final-botoes">
-                        <p class="final-desafio-tempo" hidden>DESAFIO FINAL: <strong class="tempo-desafio">00:00</strong></p>
-                        <button class="btn btn-success botao-desafio-final">IR PARA O DESAFIO FINAL</button>
-                        <button class="btn btn-success botao-refazer-desafio" hidden>REFAZER DESAFIO FINAL</button>
-                        <button class="btn btn-success botao-voltar-inicio" hidden>VOLTAR AO INÍCIO</button>
+                        <p class="final-desafio-tempo">DESAFIO FINAL: <strong class="tempo-desafio">00:00</strong></p>
+                        <button class="btn btn-success botao-refazer-desafio">REFAZER DESAFIO FINAL</button>
+                        <button class="btn btn-success botao-voltar-inicio">VOLTAR AO INÍCIO</button>
                     </div>
                 </div>
             </div>
@@ -145,6 +145,7 @@
                     <h1 id="desafio-titulo" class="desafio-titulo">SEPARAR ANIMAIS PELAS LETRAS</h1>
                     <p class="desafio-instrucao"></p>
                     <span class="desafio-letra" aria-label="Letra da rodada"></span>
+                    <button type="button" class="btn btn-volume botao-repetir-instrucao" aria-label="Ouvir a instrução de novo"><i class="fa fa-volume-up"></i></button>
                     <p class="desafio-ajuda">OS OUTROS ANIMAIS FICAM À ESQUERDA.</p>
                 </header>
 
@@ -178,9 +179,6 @@
 
 <!-- Liga/desliga a música de fundo -->
 <button type="button" class="botao-musica" aria-label="Música"><i class="fa fa-music"></i></button>
-
-<!-- Bootstrap 5.3.8 JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 <!-- Jquery 4.0.0 -->
 <script src="https://code.jquery.com/jquery-4.0.0.min.js"

@@ -314,6 +314,17 @@
     gap: 1.5vw;
 }
 
+.parte-5 .resultado-botoes .btn {
+    max-width: 100%;
+}
+
+/* texto mais longo que o de repetir: fonte menor para caber no painel */
+.parte-5 .botao-desafio-final {
+    font-size: clamp(18px, 2.2vw, 40px);
+    padding: 10px 28px;
+    white-space: nowrap;
+}
+
 .parte-5 .estrela {
     height: 100%;
     object-fit: contain;
@@ -546,6 +557,14 @@
     box-shadow: 0 3px 0 rgba(0, 0, 0, .2);
 }
 
+.desafio-cabecalho .btn-volume {
+    margin-left: .5rem;
+    color: #1f6fb2;
+    font-size: clamp(20px, 3.4vh, 34px);
+    vertical-align: middle;
+    text-shadow: 0 1px 0 #fff !important;
+}
+
 .desafio-ajuda {
     margin: .15rem 0 0;
     color: #4d5a73;
@@ -607,11 +626,6 @@
 .desafio-zona-sim .desafio-zona-escolher:hover,
 .desafio-zona-sim .desafio-zona-escolher:focus-visible {
     background: rgba(25, 201, 58, .15);
-}
-
-.desafio-zona-rotulo {
-    font-size: clamp(.75rem, 1.4vw, 1.15rem);
-    line-height: 1.05;
 }
 
 .desafio-zona-escolher small {
@@ -692,12 +706,6 @@
     pointer-events: none;
 }
 
-.animal-nome {
-    display: block;
-    max-width: 100%;
-    overflow-wrap: anywhere;
-}
-
 .animal-card.animal-selecionado {
     outline: 5px solid #ffbd21;
     outline-offset: 2px;
@@ -747,21 +755,16 @@
     text-align: center;
 }
 
-.desafio-contagem,
 .desafio-status {
     margin: 0;
     color: #233459;
-    font-size: clamp(.7rem, 1.3vw, 1rem);
-}
-
-.desafio-status {
     font-size: clamp(.68rem, 1.15vw, .92rem);
 }
 
 .desafio-proxima {
-    font-size: clamp(.9rem, 1.4vw, 1.2rem) !important;
-    padding: .4rem 1rem !important;
-    border-radius: 14px !important;
+    font-size: clamp(1rem, 1.6vw, 1.35rem);
+    padding: .45rem 1.25rem;
+    border-radius: 14px;
 }
 
 @media (max-width: 700px) and (orientation: portrait) {
@@ -796,10 +799,6 @@
         grid-area: banco;
         grid-template-rows: repeat(2, minmax(108px, 16vh));
         gap: .35rem;
-    }
-
-    .desafio-zona-rotulo {
-        font-size: clamp(.7rem, 3.2vw, .95rem);
     }
 
     .animal-card {
@@ -848,13 +847,6 @@
     font-size: 1.2em;
 }
 
-.parte-6 .final-botoes button[hidden],
-.parte-6 .final-desafio-tempo[hidden],
-.parte-7 .desafio-apresentacao[hidden],
-.parte-7 .desafio-final[hidden] {
-    display: none !important;
-}
-
 .parte-6 .final-botoes {
     top: 36.5cqw;
     flex-direction: column;
@@ -865,121 +857,6 @@
 .parte-6 .final-botoes .btn {
     font-size: clamp(1rem, 2.1cqw, 2rem);
     padding: .7cqw 2cqw;
-}
-
-/* Apresentação antes da primeira rodada, com personagem e troféu já usados no encerramento. */
-.parte-7 {
-    height: 100%;
-    min-height: 0;
-    overflow-y: auto;
-}
-
-.parte-7 .desafio-apresentacao {
-    display: flex;
-    min-height: 100%;
-    align-items: center;
-    justify-content: center;
-    padding: clamp(.5rem, 3vw, 2rem);
-}
-
-.desafio-apresentacao-cartao {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: clamp(1rem, 3vw, 3rem);
-    width: min(900px, 90vw);
-    min-height: min(68vh, 620px);
-    padding: clamp(1.25rem, 4vw, 3rem);
-    border: 4px solid rgba(255, 255, 255, .85);
-    border-radius: 36px;
-    background: rgba(255, 255, 255, .76);
-    box-shadow: 0 10px 28px rgba(0, 0, 0, .2);
-    backdrop-filter: blur(5px);
-}
-
-.desafio-apresentacao-mascote {
-    align-self: flex-end;
-    width: min(30%, 250px);
-    max-height: 56vh;
-    object-fit: contain;
-    filter: drop-shadow(0 6px 8px rgba(0, 0, 0, .2));
-}
-
-.desafio-apresentacao-conteudo {
-    display: flex;
-    flex: 1 1 auto;
-    flex-direction: column;
-    align-items: center;
-    gap: clamp(.4rem, 1.2vh, 1rem);
-    text-align: center;
-}
-
-.desafio-apresentacao-conteudo .desafio-selo {
-    font-size: clamp(1rem, 2vw, 1.5rem);
-}
-
-.desafio-apresentacao-conteudo h1 {
-    margin: 0;
-    color: #ef2f2f;
-    font-size: clamp(2rem, 5vw, 4.5rem);
-    line-height: 1;
-    text-shadow: 0 3px 0 #fff, 0 5px 0 rgba(0, 0, 0, .15);
-}
-
-.desafio-apresentacao-texto {
-    margin: 0;
-    color: #1b2f7a;
-    font-size: clamp(1rem, 2vw, 1.55rem);
-}
-
-.desafio-letras {
-    display: flex;
-    justify-content: center;
-    gap: clamp(.5rem, 2vw, 1.5rem);
-}
-
-.desafio-letras span {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: .15rem;
-    width: clamp(76px, 11vw, 112px);
-    padding: .45rem;
-    border: 3px solid #f7931e;
-    border-radius: 18px;
-    background: #fff;
-    color: #1b2f7a;
-    box-shadow: 0 4px 0 rgba(0, 0, 0, .15);
-}
-
-.desafio-letras b {
-    color: #ef2f2f;
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    line-height: 1;
-}
-
-.desafio-letras small {
-    font-size: clamp(.62rem, 1.1vw, .85rem);
-}
-
-.desafio-apresentacao-ajuda {
-    margin: 0;
-    color: #4d5a73;
-    font-size: clamp(.75rem, 1.25vw, 1rem);
-}
-
-.desafio-apresentacao-trofeu {
-    position: absolute;
-    top: -5%;
-    right: -3%;
-    width: clamp(64px, 11vw, 118px);
-    filter: drop-shadow(0 5px 6px rgba(0, 0, 0, .22));
-}
-
-.botao-comecar-desafio {
-    margin-top: .35rem;
-    font-size: clamp(1rem, 1.7vw, 1.5rem) !important;
 }
 
 /* No tabuleiro, as zonas comunicam apenas o sentido pelas setas. */
@@ -1014,36 +891,7 @@
     height: 100%;
 }
 
-.desafio-proxima {
-    font-size: clamp(1rem, 1.6vw, 1.35rem) !important;
-    padding: .45rem 1.25rem !important;
-}
-
 @media (max-width: 700px) and (orientation: portrait) {
-    .desafio-apresentacao-cartao {
-        flex-direction: column-reverse;
-        gap: .5rem;
-        width: 100%;
-        min-height: auto;
-        padding: 1rem;
-    }
-
-    .desafio-apresentacao-mascote {
-        align-self: center;
-        width: auto;
-        height: min(26vh, 190px);
-    }
-
-    .desafio-apresentacao-trofeu {
-        top: -2%;
-        right: 0;
-        width: 65px;
-    }
-
-    .desafio-letras span {
-        width: clamp(68px, 22vw, 90px);
-    }
-
     .parte-6 .final-desafio-tempo {
         font-size: 3cqw;
     }
@@ -1088,8 +936,4 @@
     -webkit-text-stroke: clamp(2px, .45vw, 6px) #fff;
     paint-order: stroke fill;
     text-shadow: 0 6px 0 #174bc1, 0 10px 12px rgba(0, 0, 0, .45);
-}
-
-.intro-desafio-final-fallback[hidden] {
-    display: none !important;
 }

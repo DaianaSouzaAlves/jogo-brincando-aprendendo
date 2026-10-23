@@ -18,23 +18,30 @@ const ANIMAIS_DESAFIO = {
 const RODADAS_DESAFIO = [
     {
         letra: 'C',
+        audio: 'animais letra C.mp3',
         tipo: 'inicio',
         instrucao: 'PARA A DIREITA, OS ANIMAIS QUE COMEÇAM COM A LETRA:',
         animais: ['cachorro', 'cavalo', 'coelho', 'gato', 'urso', 'peixe']
     },
     {
         letra: 'O',
+        audio: 'animais letra O.mp3',
         tipo: 'fim',
         instrucao: 'PARA A DIREITA, OS ANIMAIS QUE TERMINAM COM A LETRA:',
         animais: ['gato', 'sapo', 'rato', 'vaca', 'peixe', 'abelha']
     },
     {
         letra: 'A',
+        audio: 'animais letra A.mp3',
         tipo: 'contem',
         instrucao: 'PARA A DIREITA, OS ANIMAIS QUE TÊM A LETRA NO NOME:',
         animais: ['vaca', 'galinha', 'macaco', 'peixe', 'urso', 'porco']
     }
 ];
+
+const TEMPO_INTRO_DESAFIO = 1800; // ms que a vinheta do desafio fica na tela
+const TEMPO_ANIMACAO_INTRO_DESAFIO = 200 + TEMPO_INTRO_DESAFIO + 400; // entrada + tela + saída da vinheta
+const TEMPO_TRAVA_AUDIO = 6000; // espera máxima pela fala de conclusão, caso o áudio não toque
 
 let rodadaDesafioAtual = 0;
 let animalSelecionado = null;
@@ -45,6 +52,9 @@ let tempoDesafioMs = null;
 let tempoInicioDesafio = null;
 let timerConclusaoDesafio = null;
 let timerIntroDesafio = null;
+let timerFalaDesafio = null;
+let timerProximaEtapa = null;
+let resumoMostrado = false;
 
 function normalizarNomeDesafio(texto) {
     return texto.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('pt-BR');
@@ -61,6 +71,9 @@ function animalAtendeRegra(animal, rodada) {
 function iniciarDesafioFinal() {
     clearTimeout(timerConclusaoDesafio);
     clearTimeout(timerIntroDesafio);
+    clearTimeout(timerFalaDesafio);
+    clearTimeout(timerProximaEtapa);
+    resumoMostrado = false;
     rodadaDesafioAtual = 0;
     animalSelecionado = null;
     animaisClassificados = 0;
@@ -68,18 +81,19 @@ function iniciarDesafioFinal() {
     tempoInicioDesafio = null;
     instalarEventosDesafio();
     trocaParte(7);
-    montarRodadaDesafio();
+    montarRodadaDesafio(TEMPO_ANIMACAO_INTRO_DESAFIO);
 
     const $vinheta = $('.parte-7 .intro-desafio-final');
     $vinheta.stop(true, true).fadeIn(200);
+    playSound('desafio final.mp3', .5, 'p');
     timerIntroDesafio = setTimeout(() => {
         $vinheta.fadeOut(400, () => {
             tempoInicioDesafio = performance.now();
         });
-    }, 1800);
+    }, TEMPO_INTRO_DESAFIO);
 }
 
-function montarRodadaDesafio() {
+function montarRodadaDesafio(atrasoFala = 0) {
     const rodada = RODADAS_DESAFIO[rodadaDesafioAtual];
     const $tela = document.querySelector('.parte-7');
     const $banco = $tela.querySelector('.desafio-banco');
@@ -99,6 +113,10 @@ function montarRodadaDesafio() {
     $tela.querySelector('.desafio-status').textContent = `Etapa ${rodadaDesafioAtual + 1}. ${rodada.instrucao} ${rodada.letra}.`;
     $proxima.textContent = 'PRÓXIMA ETAPA';
     $proxima.hidden = true;
+
+    clearTimeout(timerFalaDesafio);
+    clearTimeout(timerProximaEtapa);
+    timerFalaDesafio = setTimeout(() => playSound(rodada.audio, .5, 'p'), atrasoFala);
 
     embaralharArray([...rodada.animais]).forEach(id => {
         const animal = ANIMAIS_DESAFIO[id];
@@ -133,21 +151,22 @@ function instalarEventosDesafio() {
         const $card = event.target.closest('.animal-card');
         if (!$card || (event.key !== 'Enter' && event.key !== ' ')) return;
         event.preventDefault();
-        selecionarAnimalDesafio($card.dataset.animalId);
+        selecionarAnimalDesafio($card.dataset.animalId, true);
     });
     $banco.addEventListener('click', event => {
         const $card = event.target.closest('.animal-card');
-        if ($card && event.detail === 0) selecionarAnimalDesafio($card.dataset.animalId);
+        if ($card && event.detail === 0) selecionarAnimalDesafio($card.dataset.animalId, true);
     });
 
     $tabuleiro.addEventListener('click', event => {
         const $botaoZona = event.target.closest('.desafio-zona-escolher');
         if (!$botaoZona) return;
-        if (!animalSelecionado) {
-            atualizarStatusDesafio('Escolha uma figura e depois uma seta.');
-            return;
-        }
+        if (!animalSelecionado) return;
         classificarAnimalDesafio(animalSelecionado, $botaoZona.dataset.resposta);
+    });
+
+    $tela.querySelector('.botao-repetir-instrucao').addEventListener('click', () => {
+        playSound(RODADAS_DESAFIO[rodadaDesafioAtual].audio, .5, 'p');
     });
 
     $tela.querySelector('.desafio-proxima').addEventListener('click', () => {
@@ -203,7 +222,7 @@ function finalizarArrasteDesafio(event) {
     if (arraste.fantasma) arraste.fantasma.remove();
 
     if (!arraste.moveu) {
-        selecionarAnimalDesafio(arraste.id);
+        selecionarAnimalDesafio(arraste.id, true);
         return;
     }
     const $alvo = document.elementFromPoint(event.clientX, event.clientY);
@@ -212,7 +231,8 @@ function finalizarArrasteDesafio(event) {
         classificarAnimalDesafio(arraste.id, $zona.dataset.resposta);
     } else {
         selecionarAnimalDesafio(arraste.id, false);
-        atualizarStatusDesafio('Solte a figura sobre uma das setas.');
+        atualizarStatusDesafio('Solte a figura na direita ou na esquerda.');
+        playSound('esquerda ou direita.mp3', .5, 'p');
     }
 }
 
@@ -233,7 +253,7 @@ function selecionarAnimalDesafio(id, tocarAudio = false) {
         card.setAttribute('aria-pressed', String(card === $card));
     });
     animalSelecionado = id;
-    if (tocarAudio) playSound('click.mp3', .25, 'desafio-animal');
+    if (tocarAudio) playSound(`respostas/${id}.mp3`, .5, 'p');
 }
 
 function classificarAnimalDesafio(id, resposta) {
@@ -250,8 +270,8 @@ function classificarAnimalDesafio(id, resposta) {
         $card.setAttribute('aria-pressed', 'false');
         $card.classList.add('animal-card-erro');
         setTimeout(() => $card.classList.remove('animal-card-erro'), 500);
-        tocarFeedback(false);
-        atualizarStatusDesafio('Essa não é a seta certa. Tente de novo.');
+        tocarFeedback(false, 'tente de novo.mp3');
+        atualizarStatusDesafio('Esse não é o lado certo. Tente de novo.');
         return;
     }
 
@@ -263,31 +283,46 @@ function classificarAnimalDesafio(id, resposta) {
     $card.setAttribute('aria-label', `Figura de ${animal.nome}. Classificada corretamente.`);
     $tela.querySelector(`.desafio-zona[data-resposta="${resposta}"] .zona-itens`).append($card);
     animaisClassificados++;
-    tocarFeedback(true);
 
-    if (animaisClassificados !== rodada.animais.length) return;
+    const concluiu = animaisClassificados === rodada.animais.length;
+    const ultimaEtapa = rodadaDesafioAtual === RODADAS_DESAFIO.length - 1;
+    const fala = concluiu ? (ultimaEtapa ? 'parabens.mp3' : 'proxima etapa.mp3') : null;
+    tocarFeedback(true, fala, concluiu ? (ultimaEtapa ? irParaResumo : liberarProximaEtapa) : null);
+
+    if (!concluiu) return;
     atualizarStatusDesafio(`Etapa ${rodadaDesafioAtual + 1} concluída.`);
+    clearTimeout(timerFalaDesafio);
 
-    if (rodadaDesafioAtual < RODADAS_DESAFIO.length - 1) {
-        $tela.querySelector('.desafio-proxima').hidden = false;
-        $tela.querySelector('.desafio-proxima').focus();
+    // a etapa só libera depois da fala; o timer é a trava para o caso de o áudio não tocar
+    if (!ultimaEtapa) {
+        timerProximaEtapa = setTimeout(liberarProximaEtapa, TEMPO_TRAVA_AUDIO);
         return;
     }
 
     tempoDesafioMs = Math.max(0, Math.round(performance.now() - tempoInicioDesafio));
     clearTimeout(timerConclusaoDesafio);
-    timerConclusaoDesafio = setTimeout(() => mostrarResumoFinal(true), 700);
+    timerConclusaoDesafio = setTimeout(irParaResumo, TEMPO_TRAVA_AUDIO);
+}
+
+/** Mostra o botão da próxima etapa (pela fala de conclusão ou pela trava de tempo). */
+function liberarProximaEtapa() {
+    const $proxima = document.querySelector('.parte-7 .desafio-proxima');
+    if (!$proxima.hidden) return;
+    clearTimeout(timerProximaEtapa);
+    $proxima.hidden = false;
+    $proxima.focus();
+}
+
+/** Vai para o resumo uma única vez, quando o parabéns termina ou a trava estoura. */
+function irParaResumo() {
+    if (resumoMostrado) return;
+    resumoMostrado = true;
+    clearTimeout(timerConclusaoDesafio);
+    mostrarResumoFinal();
 }
 
 function atualizarStatusDesafio(mensagem) {
     document.querySelector('.parte-7 .desafio-status').textContent = mensagem;
-}
-
-function formatarTempoDesafio(milisegundos) {
-    const totalSegundos = Math.floor(Math.max(0, milisegundos || 0) / 1000);
-    const minutos = Math.floor(totalSegundos / 60);
-    const segundos = totalSegundos % 60;
-    return `${String(minutos).padStart(2, '0')}:${String(segundos).padStart(2, '0')}`;
 }
 
 function configurarVinhetaDesafio() {
