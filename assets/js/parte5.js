@@ -1,4 +1,4 @@
-/** TELA 5: resultado - 3 estrelas pelo aproveitamento; 2+ libera o próximo nível **/
+/** TELA 5: resultado individual dos níveis; 2+ estrelas libera a próxima etapa **/
 
 /** Último resultado de cada nível ({acertos, total, estrelas}), usado no resumo final. */
 const resultadosNiveis = {};
@@ -9,7 +9,7 @@ function calcularEstrelas(acertos, total) {
     return aproveitamento <= 1 / 3 ? 1 : aproveitamento <= 2 / 3 ? 2 : 3;
 }
 
-/** Mostra as estrelas e o botão de jogar de novo ou de próximo nível. */
+/** Mostra as estrelas e o botão de repetir ou de próximo nível. */
 function mostrarResultado(acertos, total) {
     const $tela = $('.parte-5');
     const estrelas = calcularEstrelas(acertos, total);
@@ -18,28 +18,25 @@ function mostrarResultado(acertos, total) {
 
     resultadosNiveis[nivelAtual] = {acertos, total, estrelas};
     clearTimeout(timerFalaPergunta);
-    pararSom('p'); // a fala da última pergunta não continua na tela de resultado
+    pararSom('p');
 
-    // passou do último nível: em vez do resultado do nível, mostra o resumo dos três
-    if (ultimoNivel && estrelas > 1) {
-        mostrarResumoFinal();
+    // Ao passar pelo difícil, mostra primeiro o resumo dos três níveis.
+    if (ultimoNivel) {
+        mostrarResumoFinal(false);
         return;
     }
 
     $tela.find('.numero-acertos').text(acertos);
     $tela.find('.texto-acertos').text(acertos === 1 ? 'ACERTO!' : 'ACERTOS!');
-    // personagem conforme o desempenho: 1 estrela = melhore, 2 = médio, 3 = bom
     $tela.find('.resultado-personagem').attr('src', `assets/img/${['resultado_melhore', 'resultado_medio', 'resultado_bom'][estrelas - 1]}.png`);
     $tela.find('.estrela').each((i, el) => $(el).toggleClass('apagada', i >= estrelas));
-
-    // 1 estrela: só jogar novamente. 2 ou 3: o próximo nível vira botão (no último nível, só repetir)
     $tela.find('.botao-proximo').toggle(temProximo);
     $tela.find('.botao-repetir').toggle(!temProximo);
     trocaParte(5);
 }
 
-/** TELA 6: acertos e estrelas de cada nível, depois de terminar o último. */
-function mostrarResumoFinal() {
+/** TELA 6: resumo dos níveis, antes do desafio ou com o tempo após concluí-lo. */
+function mostrarResumoFinal(depoisDoDesafio = false) {
     NIVEIS.forEach(nivel => {
         const {acertos, total, estrelas} = resultadosNiveis[nivel];
         const $card = $(`.parte-6 .resumo-card[data-nivel="${nivel}"]`);
@@ -47,11 +44,36 @@ function mostrarResumoFinal() {
         $card.find('.resumo-nota span').text(`/${total}`);
         $card.find('.estrela').each((i, el) => $(el).toggleClass('apagada', i >= estrelas));
     });
+
+    $('.parte-6 .final-desafio-tempo')
+        .prop('hidden', !depoisDoDesafio)
+        .find('.tempo-desafio').text(depoisDoDesafio ? formatarTempoDesafio(tempoDesafioMs) : '00:00');
+    $('.parte-6 .botao-desafio-final').prop('hidden', depoisDoDesafio);
+    $('.parte-6 .botao-refazer-desafio, .parte-6 .botao-voltar-inicio').prop('hidden', !depoisDoDesafio);
     trocaParte(6);
 }
 
-$('.parte-6 .botao-jogar-novamente')
-    .on('click', () => iniciarNivel(NIVEIS[0]))
+/** Limpa a partida anterior quando a criança inicia um novo jogo. */
+function limparResultadosJogo() {
+    Object.keys(resultadosNiveis).forEach(nivel => delete resultadosNiveis[nivel]);
+    tempoDesafioMs = null;
+}
+
+function voltarInicioDoJogo() {
+    limparResultadosJogo();
+    trocaParte(1);
+}
+
+$('.parte-6 .botao-desafio-final')
+    .on('click', () => iniciarDesafioFinal())
+    .on('mousedown', () => playSound('click.mp3', .5));
+
+$('.parte-6 .botao-refazer-desafio')
+    .on('click', () => iniciarDesafioFinal())
+    .on('mousedown', () => playSound('click.mp3', .5));
+
+$('.parte-6 .botao-voltar-inicio')
+    .on('click', () => voltarInicioDoJogo())
     .on('mousedown', () => playSound('click.mp3', .5));
 
 $('.parte-5 .botao-repetir')

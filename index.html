@@ -123,10 +123,54 @@
                     </div>
 
                     <div class="final-botoes">
-                        <button class="btn btn-success botao-jogar-novamente">JOGAR NOVAMENTE</button>
+                        <p class="final-desafio-tempo" hidden>DESAFIO FINAL: <strong class="tempo-desafio">00:00</strong></p>
+                        <button class="btn btn-success botao-desafio-final">IR PARA O DESAFIO FINAL</button>
+                        <button class="btn btn-success botao-refazer-desafio" hidden>REFAZER DESAFIO FINAL</button>
+                        <button class="btn btn-success botao-voltar-inicio" hidden>VOLTAR AO INÍCIO</button>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!-- PARTE 7: desafio final de classificação por letras -->
+        <div class="col-12 parte parte-7" style="display: none;">
+            <div class="intro-desafio-final" aria-hidden="true" style="display: none;">
+                <img src="/manus-storage/async-images/F5lb6gmIxSunLpylOuGYEe/image-1.webp" alt="Desafio final!">
+                <span class="intro-desafio-final-fallback" hidden>DESAFIO FINAL!</span>
+            </div>
+
+            <section class="desafio-final" aria-labelledby="desafio-titulo">
+                <header class="desafio-cabecalho">
+                    <p class="desafio-selo"></p>
+                    <h1 id="desafio-titulo" class="desafio-titulo">SEPARAR ANIMAIS PELAS LETRAS</h1>
+                    <p class="desafio-instrucao"></p>
+                    <span class="desafio-letra" aria-label="Letra da rodada"></span>
+                    <p class="desafio-ajuda">OS OUTROS ANIMAIS FICAM À ESQUERDA.</p>
+                </header>
+
+                <div class="desafio-tabuleiro">
+                    <section class="desafio-zona desafio-zona-nao" data-resposta="nao">
+                        <button type="button" class="desafio-zona-escolher" data-resposta="nao" aria-label="Escolher o lado esquerdo">
+                            <span class="desafio-seta" aria-hidden="true">←</span>
+                        </button>
+                        <div class="zona-itens"></div>
+                    </section>
+
+                    <div class="desafio-banco" aria-label="Figuras de animais para classificar"></div>
+
+                    <section class="desafio-zona desafio-zona-sim" data-resposta="sim">
+                        <button type="button" class="desafio-zona-escolher" data-resposta="sim" aria-label="Escolher o lado direito">
+                            <span class="desafio-seta" aria-hidden="true">→</span>
+                        </button>
+                        <div class="zona-itens"></div>
+                    </section>
+                </div>
+
+                <footer class="desafio-rodape">
+                    <button type="button" class="btn btn-success desafio-proxima" hidden>PRÓXIMA ETAPA</button>
+                    <span class="visually-hidden desafio-status" aria-live="polite"></span>
+                </footer>
+            </section>
         </div>
 
     </div>
@@ -148,6 +192,7 @@
 <script src="assets/js/parte4.js"></script>
 <script src="assets/js/ligacao.js"></script>
 <script src="assets/js/parte5.js"></script>
+<script src="assets/js/parte7.js"></script>
 
 </body>
 

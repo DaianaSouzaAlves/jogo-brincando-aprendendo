@@ -482,3 +482,614 @@
     border-width: .3cqw;
     white-space: nowrap;
 }
+
+
+/* ======================= TELA 7: DESAFIO FINAL DE CLASSIFICAÇÃO ======================= */
+.parte-7 {
+    height: 100%;
+    min-height: 0;
+    overflow-y: auto;
+}
+
+.parte-7 .desafio-final {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: clamp(.35rem, 1vh, .8rem);
+    height: 100%;
+    min-height: 0;
+    padding: .25rem clamp(.2rem, 1vw, 1rem);
+}
+
+.desafio-cabecalho {
+    flex: 0 0 auto;
+    text-align: center;
+}
+
+.desafio-selo {
+    margin: 0;
+    color: #1f6fb2;
+    font-size: clamp(.8rem, 1.5vw, 1.15rem);
+    letter-spacing: .08em;
+}
+
+.desafio-titulo {
+    margin: 0;
+    color: #ef2f2f;
+    font-size: clamp(1.25rem, 3.2vh, 2.3rem);
+    line-height: 1.05;
+    -webkit-text-stroke: 1px white;
+    paint-order: stroke fill;
+    text-shadow: 0 2px 0 rgba(0, 0, 0, .2);
+}
+
+.desafio-instrucao {
+    margin: .2rem 0 0;
+    color: #253b73;
+    font-size: clamp(.85rem, 1.9vh, 1.3rem);
+    line-height: 1.15;
+}
+
+.desafio-letra {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(2.5rem, 6.5vh, 4.2rem);
+    height: clamp(2.5rem, 6.5vh, 4.2rem);
+    margin-top: .15rem;
+    border: 3px solid #f7931e;
+    border-radius: 18px;
+    background: #fff;
+    color: #ef2f2f;
+    font-size: clamp(1.8rem, 4.8vh, 3.2rem);
+    line-height: 1;
+    box-shadow: 0 3px 0 rgba(0, 0, 0, .2);
+}
+
+.desafio-ajuda {
+    margin: .15rem 0 0;
+    color: #4d5a73;
+    font-size: clamp(.7rem, 1.25vh, .95rem);
+}
+
+.desafio-tabuleiro {
+    flex: 1 1 auto;
+    display: grid;
+    grid-template-columns: minmax(145px, 1fr) minmax(300px, 2.25fr) minmax(145px, 1fr);
+    gap: clamp(.4rem, 1vw, 1rem);
+    min-height: 0;
+}
+
+.desafio-zona {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 0;
+    padding: clamp(.3rem, .7vw, .7rem);
+    border: 4px dashed;
+    border-radius: 22px;
+    transition: background-color .15s ease, border-color .15s ease;
+}
+
+.desafio-zona-nao {
+    border-color: #e69127;
+    background: rgba(255, 247, 227, .78);
+}
+
+.desafio-zona-sim {
+    border-color: #19a738;
+    background: rgba(231, 255, 235, .78);
+}
+
+.desafio-zona-escolher {
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .1rem;
+    min-height: clamp(58px, 9vh, 92px);
+    padding: .3rem;
+    border: 0;
+    border-radius: 15px;
+    background: transparent;
+    color: #233459;
+    font-family: var(--fonte);
+    text-align: center;
+    cursor: pointer;
+}
+
+.desafio-zona-nao .desafio-zona-escolher:hover,
+.desafio-zona-nao .desafio-zona-escolher:focus-visible {
+    background: rgba(247, 147, 30, .16);
+}
+
+.desafio-zona-sim .desafio-zona-escolher:hover,
+.desafio-zona-sim .desafio-zona-escolher:focus-visible {
+    background: rgba(25, 201, 58, .15);
+}
+
+.desafio-zona-rotulo {
+    font-size: clamp(.75rem, 1.4vw, 1.15rem);
+    line-height: 1.05;
+}
+
+.desafio-zona-escolher small {
+    font-size: clamp(.58rem, .95vw, .75rem);
+    color: #56617a;
+}
+
+.desafio-seta {
+    font-size: clamp(1.3rem, 3vh, 2.4rem);
+    line-height: .9;
+}
+
+.zona-itens {
+    display: flex;
+    flex: 1 1 auto;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+    gap: .3rem;
+    min-height: 0;
+    overflow-y: auto;
+}
+
+.desafio-banco {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    gap: clamp(.35rem, .8vw, .8rem);
+    min-width: 0;
+    min-height: 0;
+    padding: .25rem;
+}
+
+.animal-card {
+    position: relative;
+    display: flex;
+    min-width: 0;
+    min-height: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .15rem;
+    padding: clamp(.2rem, .6vw, .5rem);
+    overflow: hidden;
+    border: 4px solid #0056b3;
+    border-top-color: #32aaff;
+    border-left-color: #32aaff;
+    border-radius: 20px;
+    background: linear-gradient(to bottom right, #4da6ff 0%, #007bff 100%);
+    color: white;
+    font-family: var(--fonte);
+    font-size: clamp(.72rem, 1.25vw, 1.15rem);
+    line-height: 1.05;
+    text-align: center;
+    text-shadow: 0 2px 0 rgba(0, 0, 0, .4);
+    box-shadow: 0 3px 0 rgba(0, 0, 0, .22), 0 5px 10px rgba(0, 0, 0, .14);
+    cursor: grab;
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+    transition: transform .15s ease, outline-color .15s ease, opacity .15s ease;
+}
+
+.animal-card:hover,
+.animal-card:focus-visible {
+    z-index: 1;
+    outline: 4px solid #f7931e;
+    outline-offset: 1px;
+    transform: translateY(-2px) scale(1.02);
+}
+
+.animal-card img {
+    display: block;
+    width: 100%;
+    height: 72%;
+    min-height: 0;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+.animal-nome {
+    display: block;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+.animal-card.animal-selecionado {
+    outline: 5px solid #ffbd21;
+    outline-offset: 2px;
+    transform: scale(1.05);
+}
+
+.animal-card.animal-card-erro {
+    outline: 5px solid #e0312f;
+    animation: tremer .4s;
+}
+
+.animal-card.animal-classificado {
+    width: clamp(62px, 5.5vw, 94px);
+    height: clamp(70px, 9vh, 106px);
+    flex: 0 0 auto;
+    padding: .2rem;
+    border-width: 2px;
+    border-radius: 13px;
+    font-size: clamp(.58rem, .8vw, .75rem);
+    cursor: default;
+    box-shadow: none;
+}
+
+.animal-card.animal-classificado img {
+    height: 70%;
+}
+
+.animal-card-fantasma {
+    position: fixed !important;
+    z-index: 1000 !important;
+    left: 0;
+    top: 0;
+    pointer-events: none !important;
+    opacity: .85;
+    transform: translate(-50%, -50%) rotate(-3deg) scale(1.08);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, .35);
+}
+
+.desafio-rodape {
+    flex: 0 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: .35rem clamp(.5rem, 1.5vw, 1.5rem);
+    min-height: 2.4rem;
+    text-align: center;
+}
+
+.desafio-contagem,
+.desafio-status {
+    margin: 0;
+    color: #233459;
+    font-size: clamp(.7rem, 1.3vw, 1rem);
+}
+
+.desafio-status {
+    font-size: clamp(.68rem, 1.15vw, .92rem);
+}
+
+.desafio-proxima {
+    font-size: clamp(.9rem, 1.4vw, 1.2rem) !important;
+    padding: .4rem 1rem !important;
+    border-radius: 14px !important;
+}
+
+@media (max-width: 700px) and (orientation: portrait) {
+    .parte-7 .desafio-final {
+        height: auto;
+        min-height: 100%;
+        justify-content: flex-start;
+        gap: .35rem;
+        padding: .25rem 0 2.5rem;
+    }
+
+    .desafio-titulo {
+        font-size: clamp(1.1rem, 3.4vh, 1.8rem);
+    }
+
+    .desafio-instrucao {
+        font-size: clamp(.78rem, 1.9vh, 1rem);
+    }
+
+    .desafio-tabuleiro {
+        flex: 0 0 auto;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: minmax(180px, 35vh) auto;
+        grid-template-areas: "nao sim" "banco banco";
+        gap: .35rem;
+    }
+
+    .desafio-zona-nao { grid-area: nao; }
+    .desafio-zona-sim { grid-area: sim; }
+
+    .desafio-banco {
+        grid-area: banco;
+        grid-template-rows: repeat(2, minmax(108px, 16vh));
+        gap: .35rem;
+    }
+
+    .desafio-zona-rotulo {
+        font-size: clamp(.7rem, 3.2vw, .95rem);
+    }
+
+    .animal-card {
+        font-size: clamp(.72rem, 3.5vw, 1rem);
+    }
+
+    .animal-card.animal-classificado {
+        width: clamp(54px, 16vw, 76px);
+        height: 76px;
+        font-size: clamp(.55rem, 2.4vw, .7rem);
+    }
+
+    .desafio-rodape {
+        position: sticky;
+        bottom: 0;
+        z-index: 2;
+        padding: .35rem;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, .92);
+    }
+}
+
+@media (max-height: 560px) and (min-width: 701px) {
+    .parte-7 .desafio-final { gap: .2rem; }
+    .desafio-selo { font-size: .75rem; }
+    .desafio-titulo { font-size: 1.2rem; }
+    .desafio-instrucao { font-size: .8rem; }
+    .desafio-letra { width: 2rem; height: 2rem; font-size: 1.35rem; }
+    .desafio-ajuda { font-size: .6rem; }
+    .desafio-zona-escolher { min-height: 45px; }
+}
+
+/* O resumo permanece igual antes e depois do desafio; o tempo ocupa a faixa acima dos botões. */
+.parte-6 .final-desafio-tempo {
+    position: static;
+    width: 100%;
+    margin: 0;
+    color: #1b2f7a;
+    font-size: 2.1cqw;
+    text-align: center;
+    text-shadow: 0 1px 0 #fff;
+}
+
+.parte-6 .final-desafio-tempo strong {
+    color: #ef2f2f;
+    font-size: 1.2em;
+}
+
+.parte-6 .final-botoes button[hidden],
+.parte-6 .final-desafio-tempo[hidden],
+.parte-7 .desafio-apresentacao[hidden],
+.parte-7 .desafio-final[hidden] {
+    display: none !important;
+}
+
+.parte-6 .final-botoes {
+    top: 36.5cqw;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: .6cqw;
+}
+
+.parte-6 .final-botoes .btn {
+    font-size: clamp(1rem, 2.1cqw, 2rem);
+    padding: .7cqw 2cqw;
+}
+
+/* Apresentação antes da primeira rodada, com personagem e troféu já usados no encerramento. */
+.parte-7 {
+    height: 100%;
+    min-height: 0;
+    overflow-y: auto;
+}
+
+.parte-7 .desafio-apresentacao {
+    display: flex;
+    min-height: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(.5rem, 3vw, 2rem);
+}
+
+.desafio-apresentacao-cartao {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(1rem, 3vw, 3rem);
+    width: min(900px, 90vw);
+    min-height: min(68vh, 620px);
+    padding: clamp(1.25rem, 4vw, 3rem);
+    border: 4px solid rgba(255, 255, 255, .85);
+    border-radius: 36px;
+    background: rgba(255, 255, 255, .76);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, .2);
+    backdrop-filter: blur(5px);
+}
+
+.desafio-apresentacao-mascote {
+    align-self: flex-end;
+    width: min(30%, 250px);
+    max-height: 56vh;
+    object-fit: contain;
+    filter: drop-shadow(0 6px 8px rgba(0, 0, 0, .2));
+}
+
+.desafio-apresentacao-conteudo {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(.4rem, 1.2vh, 1rem);
+    text-align: center;
+}
+
+.desafio-apresentacao-conteudo .desafio-selo {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
+.desafio-apresentacao-conteudo h1 {
+    margin: 0;
+    color: #ef2f2f;
+    font-size: clamp(2rem, 5vw, 4.5rem);
+    line-height: 1;
+    text-shadow: 0 3px 0 #fff, 0 5px 0 rgba(0, 0, 0, .15);
+}
+
+.desafio-apresentacao-texto {
+    margin: 0;
+    color: #1b2f7a;
+    font-size: clamp(1rem, 2vw, 1.55rem);
+}
+
+.desafio-letras {
+    display: flex;
+    justify-content: center;
+    gap: clamp(.5rem, 2vw, 1.5rem);
+}
+
+.desafio-letras span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .15rem;
+    width: clamp(76px, 11vw, 112px);
+    padding: .45rem;
+    border: 3px solid #f7931e;
+    border-radius: 18px;
+    background: #fff;
+    color: #1b2f7a;
+    box-shadow: 0 4px 0 rgba(0, 0, 0, .15);
+}
+
+.desafio-letras b {
+    color: #ef2f2f;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1;
+}
+
+.desafio-letras small {
+    font-size: clamp(.62rem, 1.1vw, .85rem);
+}
+
+.desafio-apresentacao-ajuda {
+    margin: 0;
+    color: #4d5a73;
+    font-size: clamp(.75rem, 1.25vw, 1rem);
+}
+
+.desafio-apresentacao-trofeu {
+    position: absolute;
+    top: -5%;
+    right: -3%;
+    width: clamp(64px, 11vw, 118px);
+    filter: drop-shadow(0 5px 6px rgba(0, 0, 0, .22));
+}
+
+.botao-comecar-desafio {
+    margin-top: .35rem;
+    font-size: clamp(1rem, 1.7vw, 1.5rem) !important;
+}
+
+/* No tabuleiro, as zonas comunicam apenas o sentido pelas setas. */
+.desafio-zona-escolher {
+    min-height: clamp(56px, 9vh, 90px);
+    font-size: clamp(2.4rem, 5vh, 4.2rem);
+}
+
+.desafio-seta {
+    font-size: clamp(3rem, 6vh, 5rem);
+    font-weight: 900;
+    color: #1b2f7a;
+    text-shadow: 0 2px 0 #fff;
+}
+
+.desafio-banco .animal-card {
+    padding: clamp(.35rem, 1vw, 1rem);
+}
+
+.desafio-banco .animal-card img {
+    width: 100%;
+    height: 100%;
+}
+
+.animal-card.animal-classificado {
+    width: clamp(70px, 7vw, 112px);
+    height: clamp(70px, 10vh, 116px);
+    padding: .2rem;
+}
+
+.animal-card.animal-classificado img {
+    height: 100%;
+}
+
+.desafio-proxima {
+    font-size: clamp(1rem, 1.6vw, 1.35rem) !important;
+    padding: .45rem 1.25rem !important;
+}
+
+@media (max-width: 700px) and (orientation: portrait) {
+    .desafio-apresentacao-cartao {
+        flex-direction: column-reverse;
+        gap: .5rem;
+        width: 100%;
+        min-height: auto;
+        padding: 1rem;
+    }
+
+    .desafio-apresentacao-mascote {
+        align-self: center;
+        width: auto;
+        height: min(26vh, 190px);
+    }
+
+    .desafio-apresentacao-trofeu {
+        top: -2%;
+        right: 0;
+        width: 65px;
+    }
+
+    .desafio-letras span {
+        width: clamp(68px, 22vw, 90px);
+    }
+
+    .parte-6 .final-desafio-tempo {
+        font-size: 3cqw;
+    }
+
+    .parte-6 .final-botoes {
+        top: 36cqw;
+        gap: 1cqw;
+    }
+
+    .parte-6 .final-botoes .btn {
+        font-size: 2.4cqw;
+        padding: .8cqw 1.5cqw;
+    }
+}
+.parte-7 .intro-desafio-final {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, .45);
+}
+
+.parte-7 .intro-desafio-final img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: min(76vw, 1050px);
+    max-height: 68vh;
+    object-fit: contain;
+    transform: translate(-50%, -50%);
+    filter: drop-shadow(0 8px 12px rgba(0, 0, 0, .35));
+}
+
+.intro-desafio-final-fallback {
+    color: #44d823;
+    font-size: clamp(3rem, 8vw, 7rem);
+    font-weight: 900;
+    line-height: 1;
+    text-align: center;
+    -webkit-text-stroke: clamp(2px, .45vw, 6px) #fff;
+    paint-order: stroke fill;
+    text-shadow: 0 6px 0 #174bc1, 0 10px 12px rgba(0, 0, 0, .45);
+}
+
+.intro-desafio-final-fallback[hidden] {
+    display: none !important;
+}
