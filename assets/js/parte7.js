@@ -74,6 +74,7 @@ function iniciarDesafioFinal() {
     clearTimeout(timerFalaDesafio);
     clearTimeout(timerProximaEtapa);
     resumoMostrado = false;
+    $('.parte-7 .parabens-desafio-final, .parte-7 .desafio-etapa-feita').stop(true, true).hide();
     rodadaDesafioAtual = 0;
     animalSelecionado = null;
     animaisClassificados = 0;
@@ -113,6 +114,7 @@ function montarRodadaDesafio(atrasoFala = 0) {
     $tela.querySelector('.desafio-status').textContent = `Etapa ${rodadaDesafioAtual + 1}. ${rodada.instrucao} ${rodada.letra}.`;
     $proxima.textContent = 'PRÓXIMA ETAPA';
     $proxima.hidden = true;
+    $tela.querySelector('.desafio-etapa-feita').style.display = 'none'; // some só na próxima etapa
 
     clearTimeout(timerFalaDesafio);
     clearTimeout(timerProximaEtapa);
@@ -270,7 +272,9 @@ function classificarAnimalDesafio(id, resposta) {
         $card.setAttribute('aria-pressed', 'false');
         $card.classList.add('animal-card-erro');
         setTimeout(() => $card.classList.remove('animal-card-erro'), 500);
-        tocarFeedback(false, 'tente de novo.mp3');
+        // no desafio não toca o som de erro, só a fala
+        pararSom('p');
+        playSound('tente de novo.mp3', .5, 'p');
         atualizarStatusDesafio('Esse não é o lado certo. Tente de novo.');
         return;
     }
@@ -287,9 +291,19 @@ function classificarAnimalDesafio(id, resposta) {
     const concluiu = animaisClassificados === rodada.animais.length;
     const ultimaEtapa = rodadaDesafioAtual === RODADAS_DESAFIO.length - 1;
     const fala = concluiu ? (ultimaEtapa ? 'parabens.mp3' : 'proxima etapa.mp3') : null;
-    tocarFeedback(true, fala, concluiu ? (ultimaEtapa ? irParaResumo : liberarProximaEtapa) : null);
+    if (concluiu && ultimaEtapa) {
+        // o título de parabéns aparece no meio da tela enquanto a fala toca
+        pararSom('p');
+        playSound('acerto.mp3', .35, 'feedback', () => {
+            mostrarParabensDesafio();
+            playSound(fala, .5, 'p', irParaResumo);
+        });
+    } else {
+        tocarFeedback(true, fala, concluiu ? liberarProximaEtapa : null);
+    }
 
     if (!concluiu) return;
+    if (!ultimaEtapa) $('.parte-7 .desafio-etapa-feita').stop(true, true).fadeIn(200);
     atualizarStatusDesafio(`Etapa ${rodadaDesafioAtual + 1} concluída.`);
     clearTimeout(timerFalaDesafio);
 
@@ -311,6 +325,10 @@ function liberarProximaEtapa() {
     clearTimeout(timerProximaEtapa);
     $proxima.hidden = false;
     $proxima.focus();
+}
+
+function mostrarParabensDesafio() {
+    $('.parte-7 .parabens-desafio-final').stop(true, true).fadeIn(200);
 }
 
 /** Vai para o resumo uma única vez, quando o parabéns termina ou a trava estoura. */

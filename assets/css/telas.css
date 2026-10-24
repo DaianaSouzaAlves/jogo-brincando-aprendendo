@@ -572,6 +572,7 @@
 }
 
 .desafio-tabuleiro {
+    position: relative;
     flex: 1 1 auto;
     display: grid;
     grid-template-columns: minmax(145px, 1fr) minmax(300px, 2.25fr) minmax(145px, 1fr);
@@ -751,7 +752,8 @@
     align-items: center;
     justify-content: center;
     gap: .35rem clamp(.5rem, 1.5vw, 1.5rem);
-    min-height: 2.4rem;
+    /* já reserva a altura do botão, para o tabuleiro (e a imagem da etapa) não encolher quando ele aparece */
+    min-height: calc(clamp(1rem, 1.6vw, 1.35rem) * 1.5 + .9rem + 4px);
     text-align: center;
 }
 
@@ -759,6 +761,20 @@
     margin: 0;
     color: #233459;
     font-size: clamp(.68rem, 1.15vw, .92rem);
+}
+
+/* centralizada no tabuleiro, entre "os outros animais..." e o botão da próxima etapa */
+.parte-7 .desafio-etapa-feita {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 5;
+    width: min(40vw, 420px);
+    max-height: 90%;
+    object-fit: contain;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    filter: drop-shadow(0 6px 10px rgba(0, 0, 0, .3));
 }
 
 .desafio-proxima {
@@ -922,6 +938,24 @@
     left: 50%;
     width: min(76vw, 1050px);
     max-height: 68vh;
+    object-fit: contain;
+    transform: translate(-50%, -50%);
+    filter: drop-shadow(0 8px 12px rgba(0, 0, 0, .35));
+}
+
+.parte-7 .parabens-desafio-final {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    background: rgba(0, 0, 0, .45);
+}
+
+.parte-7 .parabens-desafio-final img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: min(60vw, 800px);
+    max-height: 60vh;
     object-fit: contain;
     transform: translate(-50%, -50%);
     filter: drop-shadow(0 8px 12px rgba(0, 0, 0, .35));
