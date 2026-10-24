@@ -64,5 +64,5 @@ Exemplo de pergunta de múltipla escolha:
 ## Desenvolvedores
 
 - Andreza Taboni
-- Daiana de Souza Alves
+- Daiana de Souza Alves 
 - Gabrielle de Oliveira
